@@ -1,8 +1,10 @@
 import streamlit as st
+import sys
+sys.path.insert(1, "c:\users\admin\appdata\local\programs\python\python36\lib\site-packages")
 from streamlit_option_menu import option_menu
 import pandas as pd
 import glob
-import plost
+# import plost
 import time
 import webbrowser
 import io
