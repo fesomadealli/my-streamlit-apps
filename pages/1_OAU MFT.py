@@ -1,6 +1,6 @@
 import streamlit as st
 import sys
-sys.path.insert(1, "c:\users\admin\appdata\local\programs\python\python36\lib\site-packages")
+# sys.path.insert(1, "c:\users\admin\appdata\local\programs\python\python36\lib\site-packages")
 from streamlit_option_menu import option_menu
 import pandas as pd
 import glob
@@ -987,7 +987,6 @@ def analytics(val=False):
                                'select_edition' : select_edition,
                                'stack' : stack})
                 
-                params
                 # Proceed to actually plotting the viz
                 plot_functions.display_plot(plot_type="Competitions", 
                                             plot_alt=selected_plot, 
