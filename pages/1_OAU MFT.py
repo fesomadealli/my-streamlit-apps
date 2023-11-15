@@ -1,6 +1,4 @@
 import streamlit as st
-import sys
-# sys.path.insert(1, "c:\users\admin\appdata\local\programs\python\python36\lib\site-packages")
 from streamlit_option_menu import option_menu
 import pandas as pd
 import glob
@@ -11,7 +9,6 @@ import io
 import os
 
 # import custom scripts
-# import plot_functions
 import oaumft_facts
 
 # Global Elements
@@ -152,26 +149,6 @@ def read_data_from_memory():
         for line in file:
             txt_file += line
     return csv_file, txt_file
-
-# Function to create a zip file
-def create_zip():
-    # get files 
-    csv_file, txt_file = read_data_from_memory()
-    # Create a temporary directory to hold the files to be zipped
-    temp_dir = "assets/temp"
-    os.makedirs(temp_dir, exist_ok=True)
-    # Add files to the temporary directory
-    with open(os.path.join(temp_dir, "OAUMFT_2003_TO_2022.csv"), "w") as f:
-        f.write(csv_file)
-    with open(os.path.join(temp_dir, "OAUMFT_2003_TO_2022_METADATA.txt"), "w") as f:
-        f.write(txt_file)
-    # Create the zip file
-    with ZipFile("oaumft.zip", "w") as zipf:
-        for root, dirs, files in os.walk(temp_dir):
-            for file in files:
-                zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), temp_dir))
-    # Remove the temporary directory
-    os.rmdir(temp_dir) 
 
 # Navigation Pages
 def check_current_page():
