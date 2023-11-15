@@ -145,7 +145,7 @@ def Honors_Won():
 
     # Getting number of games played in Finals & 3rd Place contests
     h = honors_df.Tie.value_counts().reset_index()
-    st.df(h)
+    st.dataframe(h)
     
     # for i in range(len(h)):
     #     finals_dict[str(h['index'][i] + ' Played')] = h['Tie'][i]
