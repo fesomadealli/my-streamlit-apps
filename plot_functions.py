@@ -147,9 +147,9 @@ def Honors_Won():
     h = honors_df.Tie.value_counts().reset_index()
     st.df(h)
     
-    for i in range(len(h)):
-        finals_dict[str(h['index'][i] + ' Played')] = h['Tie'][i]
-    return "view df"
+    # for i in range(len(h)):
+    #     finals_dict[str(h['index'][i] + ' Played')] = h['Tie'][i]
+    
     # # Split dfs    
     # # Finals
     # finals_df = honors_df[(honors_df['Tie'] == 'Final')]
