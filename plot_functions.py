@@ -146,9 +146,17 @@ def Honors_Won():
     # Getting number of games played in Finals & 3rd Place contests
     h = honors_df.Tie.value_counts().reset_index()
     h = h.rename(columns={'index' : 'Outcome'})
+        
+    index_list = h['Outcome'].to_list()
+    tie_list = h.Tie.to_list()
+    if len(index_list) == len(tie_list):
+            for i in range(len(h)):
+                key = str(index_list[i])
+                value = str(tie_list[i])
+                finals_dict.update({key : value})
     
-    for i in range(len(h)):
-        finals_dict[str(h['Outcome'][i] + ' Played')] = h['Tie'][i]
+    # for i in range(len(h)):
+    #     finals_dict[str(h['Outcome'][i] + ' Played')] = h['Tie'][i]
     
     # Split dfs    
     # Finals
