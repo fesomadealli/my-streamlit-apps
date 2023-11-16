@@ -110,7 +110,9 @@ finals_dict
 finals_df = honors_df[(honors_df['Tie'] == 'Final')]
 finals_df
 
-# res_f = finals_df.FTR.value_counts().loc[order].reset_index()
+res_f = finals_df.FTR.value_counts().loc[order].reset_index()
+res_f
+
 # res_f.rename(columns={'index' : 'Outcome'})
 
 # for i in range(len(res_f)):
