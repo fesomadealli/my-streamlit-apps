@@ -164,8 +164,8 @@ ax.text(x=.5, y= .4, s='Gold', color='grey', ha='center',
 ax.text(x=.7, y= .4, s='Bronze', color='grey', ha='center',
             va='center', font=b_font, fontsize=10, zorder=2)
 
-Annotations
-Text for count Honors Won (get() method has been set to return 0 for absent keys)
+# Annotations
+# Text for count Honors Won (get() method has been set to return 0 for absent keys)
 gold_medals = finals_dict.get('Final (W)', 0) + finals_dict.get('Final PSHT (W)', 0)
 silver_medals = finals_dict.get('Final (L)', 0) + finals_dict.get('Final PSHT (L)', 0)
 bronze_medals = finals_dict.get('3rd Place (W)', 0) + finals_dict.get('3rd Place PSHT (W)', 0)
