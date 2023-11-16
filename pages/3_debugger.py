@@ -99,18 +99,8 @@ finals_dict['Honors Contested'] = len(honors_df)
 
 # Getting number of games played in Finals & 3rd Place contests
 h = honors_df.Tie.value_counts().reset_index()
-h = h.rename(columns={'index' : 'Outcome'})
+h = h.rename(columns={'count' : 'Matches'})
 st.dataframe(h)
-
-index_list = h['Outcome'].to_list()
-tie_list = h.Tie.to_list()
-if len(index_list) == len(tie_list):
-        for i in range(len(h)):
-            # key = str(index_list[i])
-            # value = str(tie_list[i])
-            # finals_dict.update({key : value})
-            finals_dict[str(h['Outcome'][i] + ' Played')] = h['Tie'][i]
-
-else:
-    st.write("Unequal Length of values... which would be totally strange!")
+for i in range(len(h)):
+    finals_dict[str(h['Tie'][i] + ' Played')] = h['Matches'][i]
 finals_dict
