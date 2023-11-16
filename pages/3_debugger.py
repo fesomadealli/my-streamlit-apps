@@ -148,9 +148,9 @@ ax.set(facecolor=facecolor, xticks=([]), yticks=([]))
 plot_functions.hide_spines(axes=ax, which_spine='all')
 
 # Creating the Podium 
-pod_third = Rectangle((0.2,.5),.2,.1, fc='grey', ec='grey')
+pod_second = Rectangle((0.2,.5),.2,.15, fc='grey', ec='grey')
 pod_first = Rectangle((0.4,.5),.2,.2, fc='grey', ec='grey')
-pod_second = Rectangle((0.6,.5),.2,.15, fc='grey', ec='grey')
+pod_third = Rectangle((0.6,.5),.2,.1, fc='grey', ec='grey')
 
 podium = [pod_third, pod_first, pod_second]
 for part in podium:
