@@ -121,6 +121,7 @@ for i in range(len(res_f)):
 third_place_df = honors_df[(honors_df['Tie'] == '3rd Place')]   
 
 res_3rd = third_place_df.FTR.value_counts().loc[order].reset_index()
+res_3rd
 # res_3rd.rename(columns={'count' : 'Matches'})
 
 for i in range(len(res_3rd)):
