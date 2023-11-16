@@ -111,11 +111,11 @@ for i in range(len(h)):
 finals_df = honors_df[(honors_df['Tie'] == 'Final')]
 
 res_f = finals_df.FTR.value_counts().loc[order].reset_index()
-res_f.rename(columns={'count' : 'Matches'})
+# res_f.rename(columns={'count' : 'Matches'})
 res_f
 
-# for i in range(len(res_f)):
-#     finals_dict['Final ('+ str(res_f['FTR'][i]) +')'] = res_f['count'][i]
+for i in range(len(res_f)):
+    finals_dict['Final ('+ str(res_f['FTR'][i]) +')'] = res_f['count'][i]
 
 
 # #  3rd Place Playoffs  
