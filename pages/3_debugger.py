@@ -145,7 +145,7 @@ finals_dict
 #  Setting up Figure & Axes
 fig, ax = plt.subplots(figsize=(12, 4), facecolor=facecolor)
 ax.set(facecolor=facecolor, xticks=([]), yticks=([]))
-hide_spines(axes=ax, which_spine='all')
+plot_functions.hide_spines(axes=ax, which_spine='all')
 
 # Creating the Podium 
 pod_third = Rectangle((0.2,.5),.2,.1, fc='grey', ec='grey')
