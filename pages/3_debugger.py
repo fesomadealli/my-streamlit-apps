@@ -91,6 +91,13 @@ honors_df = oau_giants[(oau_giants['CompGroup'] != 'PreNUGA') &
                         (oau_giants['TieDescr']=='Final') | (oau_giants['TieDescr']=='3rd Place')]
 
 honors_df.reset_index(drop=True, inplace=True)
+# Tidying some ends for data consistency
+#Changing Ties to 3rd Place at rows 4 & 6 respectively
+honors_df.at[4, 'Tie'] = '3rd Place'
+honors_df.at[6, 'Tie'] = '3rd Place'
+#Changing TieDescr to Super 4 at rows 4 & 6 respectively
+honors_df.at[4, 'TieDescr'] = 'Super 4'
+honors_df.at[6, 'TieDescr'] = 'Super 4'
 
 # Create empty dictionary
 finals_dict = {}
@@ -102,7 +109,10 @@ finals_dict['Honors Contested'] = len(honors_df)
 # Getting number of games played in Finals & 3rd Place contests
 h = honors_df.Tie.value_counts().reset_index()
 h = h.rename(columns={'count' : 'Matches'})
+
+# view honors_df
 st.dataframe(h)
+
 for i in range(len(h)):
     finals_dict[str(h['Tie'][i] + ' Played')] = h['Matches'][i]
     
@@ -111,6 +121,8 @@ for i in range(len(h)):
 finals_df = honors_df[(honors_df['Tie'] == 'Final')]
 
 res_f = finals_df.FTR.value_counts().loc[order].reset_index()
+
+# view finals df
 res_f
 
 for i in range(len(res_f)):
@@ -119,36 +131,26 @@ for i in range(len(res_f)):
 
 #  3rd Place Playoffs  
 third_place_df = honors_df[(honors_df['Tie'] == '3rd Place')]   
-third_place_df
 
 res_3rd = third_place_df.FTR.value_counts().loc[order].reset_index()
+
+# view 3rd Place df
 res_3rd
-# res_3rd.rename(columns={'count' : 'Matches'})
 
 for i in range(len(res_3rd)):
     finals_dict['3rd Place ('+ str(res_3rd['FTR'][i]) +')'] = res_3rd['count'][i]   
 
 # Adding Penalty Records
-# Setting Order of Categories for PSHTR
-psht_order = ['W','L']
-f = finals_df.PSHTR.value_counts().loc[psht_order].reset_index()
-# f.rename(columns={'count' : 'Matches'})
+f = finals_df.PSHTR.value_counts().reset_index()
 
 #  For PSHTR in Finals
-for i in range(len(f)): # minus 1 cause we dont want to include nan based on the psht_order
-    if i == 0:
-        finals_dict['Final PSHT (' + str(f['PSHTR'][i] + ')')] = f['count'][i]
-    else:
+for i in range(len(f)): 
         finals_dict['Final PSHT (' + str(f['PSHTR'][i] + ')')] = f['count'][i]
         
 #  For PSHTR in Third Place Contests
 t = third_place_df.PSHTR.value_counts().loc[psht_order].reset_index()
-# t.rename(columns={'count' : 'Matches'})
 
-for i in range(len(t)): # minus 1 cause we dont want to include nan based on the psht_order
-    if i == 0:
-        finals_dict['3rd Place PSHT (' + str(t['PSHTR'][i] + ')')] = t['count'][i]
-    else:
+for i in range(len(t)):
         finals_dict['3rd Place PSHT (' + str(t['PSHTR'][i] + ')')] = t['count'][i]
 
 finals_dict
@@ -161,7 +163,7 @@ finals_dict
 # # Creating the Podium 
 # pod_third = Rectangle((0.2,.5),.2,.1, fc='grey', ec='grey')
 # pod_first = Rectangle((0.4,.5),.2,.2, fc='grey', ec='grey')
-# pod_second = Rectangle((0.6,.5),.2,.1, fc='grey', ec='grey')
+# pod_second = Rectangle((0.6,.5),.2,.15, fc='grey', ec='grey')
 
 # podium = [pod_third, pod_first, pod_second]
 # for part in podium:
