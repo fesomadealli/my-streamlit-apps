@@ -121,10 +121,6 @@ for i in range(len(h)):
 finals_df = honors_df[(honors_df['Tie'] == 'Final')]
 
 res_f = finals_df.FTR.value_counts().loc[order].reset_index()
-
-# view finals df
-res_f
-
 for i in range(len(res_f)):
     finals_dict['Final ('+ str(res_f['FTR'][i]) +')'] = res_f['count'][i]
 
@@ -133,23 +129,17 @@ for i in range(len(res_f)):
 third_place_df = honors_df[(honors_df['Tie'] == '3rd Place')]   
 
 res_3rd = third_place_df.FTR.value_counts().loc[order].reset_index()
-
-# view 3rd Place df
-res_3rd
-
 for i in range(len(res_3rd)):
     finals_dict['3rd Place ('+ str(res_3rd['FTR'][i]) +')'] = res_3rd['count'][i]   
 
 # Adding Penalty Records
-f = finals_df.PSHTR.value_counts().reset_index()
-
 #  For PSHTR in Finals
+f = finals_df.PSHTR.value_counts().reset_index()
 for i in range(len(f)): 
         finals_dict['Final PSHT (' + str(f['PSHTR'][i] + ')')] = f['count'][i]
         
 #  For PSHTR in Third Place Contests
-t = third_place_df.PSHTR.value_counts().loc[psht_order].reset_index()
-
+t = third_place_df.PSHTR.value_counts().reset_index()
 for i in range(len(t)):
         finals_dict['3rd Place PSHT (' + str(t['PSHTR'][i] + ')')] = t['count'][i]
 
@@ -177,11 +167,11 @@ finals_dict
 # ax.text(x=.7, y= .4, s='Bronze', color='grey', ha='center',
 #             va='center', font=b_font, fontsize=10, zorder=2)
 
-# # Annotations
-# # Text for count Honors Won
-# gold_medals = finals_dict['Final (W)'] + finals_dict['Final PSHT (W)']
-# silver_medals = finals_dict['Final (L)'] + finals_dict['Final PSHT (L)']
-# bronze_medals = finals_dict['3rd Place (W)'] + finals_dict['3rd Place PSHT (W)']
+# Annotations
+# Text for count Honors Won (get() method has been set to return 0 for absent keys)
+# gold_medals = finals_dict.get('Final (W)', 0) + finals_dict.get('Final PSHT (W)', 0)
+# silver_medals = finals_dict.get('Final (L)', 0) + finals_dict.get('Final PSHT (L)', 0)
+# bronze_medals = finals_dict.get('3rd Place (W)', 0) + finals_dict.get('3rd Place PSHT (W)', 0)
 
 # ax.text(x=.3, y= .7, s=f'{silver_medals}', color=plot_color, ha='center',
 #             va='center', font=t_font, fontweight='bold', fontsize=18, zorder=2)
