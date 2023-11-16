@@ -82,6 +82,8 @@ select_period = period = "HTR"
 
 # goals_df
 
+order = ['W', 'D', 'L']
+
 # Creating the Honors Dataframe
 oau_giants = pd.read_csv("assets/oau-giants.csv")
 honors_df = oau_giants[(oau_giants['CompGroup'] != 'PreNUGA') &
