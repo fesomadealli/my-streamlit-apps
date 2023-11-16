@@ -110,9 +110,6 @@ finals_dict['Honors Contested'] = len(honors_df)
 h = honors_df.Tie.value_counts().reset_index()
 h = h.rename(columns={'count' : 'Matches'})
 
-# view honors_df
-st.dataframe(h)
-
 for i in range(len(h)):
     finals_dict[str(h['Tie'][i] + ' Played')] = h['Matches'][i]
     
@@ -145,95 +142,95 @@ for i in range(len(t)):
 
 finals_dict
 
-# #  Setting up Figure & Axes
-# fig, ax = plt.subplots(figsize=(12, 4), facecolor=facecolor)
-# ax.set(facecolor=facecolor, xticks=([]), yticks=([]))
-# hide_spines(axes=ax, which_spine='all')
+#  Setting up Figure & Axes
+fig, ax = plt.subplots(figsize=(12, 4), facecolor=facecolor)
+ax.set(facecolor=facecolor, xticks=([]), yticks=([]))
+hide_spines(axes=ax, which_spine='all')
 
-# # Creating the Podium 
-# pod_third = Rectangle((0.2,.5),.2,.1, fc='grey', ec='grey')
-# pod_first = Rectangle((0.4,.5),.2,.2, fc='grey', ec='grey')
-# pod_second = Rectangle((0.6,.5),.2,.15, fc='grey', ec='grey')
+# Creating the Podium 
+pod_third = Rectangle((0.2,.5),.2,.1, fc='grey', ec='grey')
+pod_first = Rectangle((0.4,.5),.2,.2, fc='grey', ec='grey')
+pod_second = Rectangle((0.6,.5),.2,.15, fc='grey', ec='grey')
 
-# podium = [pod_third, pod_first, pod_second]
-# for part in podium:
-#     ax.add_patch(part)
+podium = [pod_third, pod_first, pod_second]
+for part in podium:
+    ax.add_patch(part)
 
-# # Podium Labels
-# ax.text(x=.3, y= .4, s='Silver', color='grey', ha='center',
-#             va='center', font=b_font, fontsize=10, zorder=2)
-# ax.text(x=.5, y= .4, s='Gold', color='grey', ha='center',
-#             va='center', font=b_font, fontsize=10, zorder=2)
-# ax.text(x=.7, y= .4, s='Bronze', color='grey', ha='center',
-#             va='center', font=b_font, fontsize=10, zorder=2)
+# Podium Labels
+ax.text(x=.3, y= .4, s='Silver', color='grey', ha='center',
+            va='center', font=b_font, fontsize=10, zorder=2)
+ax.text(x=.5, y= .4, s='Gold', color='grey', ha='center',
+            va='center', font=b_font, fontsize=10, zorder=2)
+ax.text(x=.7, y= .4, s='Bronze', color='grey', ha='center',
+            va='center', font=b_font, fontsize=10, zorder=2)
 
-# Annotations
-# Text for count Honors Won (get() method has been set to return 0 for absent keys)
-# gold_medals = finals_dict.get('Final (W)', 0) + finals_dict.get('Final PSHT (W)', 0)
-# silver_medals = finals_dict.get('Final (L)', 0) + finals_dict.get('Final PSHT (L)', 0)
-# bronze_medals = finals_dict.get('3rd Place (W)', 0) + finals_dict.get('3rd Place PSHT (W)', 0)
+Annotations
+Text for count Honors Won (get() method has been set to return 0 for absent keys)
+gold_medals = finals_dict.get('Final (W)', 0) + finals_dict.get('Final PSHT (W)', 0)
+silver_medals = finals_dict.get('Final (L)', 0) + finals_dict.get('Final PSHT (L)', 0)
+bronze_medals = finals_dict.get('3rd Place (W)', 0) + finals_dict.get('3rd Place PSHT (W)', 0)
 
-# ax.text(x=.3, y= .7, s=f'{silver_medals}', color=plot_color, ha='center',
-#             va='center', font=t_font, fontweight='bold', fontsize=18, zorder=2)
-# ax.text(x=.5, y= .8, s=f'{gold_medals}', color=plot_color, ha='center',
-#             va='center', font=t_font, fontweight='bold', fontsize=18, zorder=2)
-# ax.text(x=.7, y= .7, s=f'{bronze_medals}', color=plot_color, ha='center',
-#             va='center', font=t_font, fontweight='bold', fontsize=18, zorder=2)
+ax.text(x=.3, y= .7, s=f'{silver_medals}', color=plot_color, ha='center',
+            va='center', font=t_font, fontweight='bold', fontsize=18, zorder=2)
+ax.text(x=.5, y= .8, s=f'{gold_medals}', color=plot_color, ha='center',
+            va='center', font=t_font, fontweight='bold', fontsize=18, zorder=2)
+ax.text(x=.7, y= .7, s=f'{bronze_medals}', color=plot_color, ha='center',
+            va='center', font=t_font, fontweight='bold', fontsize=18, zorder=2)
 
-# # Title Text
-# custom_space = " " #Needed cause of the behavioral ppts highlight-text on \n
-# title_text = (f"A PODIUM PLOT OF THE <HONORS WON> BY {team} UNDER {coach.upper()}\n"
-#                 f"\n\n{custom_space*30} ({data_span})")
-# h_fig(x=.20, y=1.1, s=title_text, color=off_white, highlight_textprops=[{'color':plot_color}],
-#     font=t_font, fontsize=13, fontweight='bold', zorder=2)
+# Title Text
+custom_space = " " #Needed cause of the behavioral ppts highlight-text on \n
+title_text = (f"A PODIUM PLOT OF THE <HONORS WON> BY {team} UNDER {coach.upper()}\n"
+                f"\n\n{custom_space*30} ({data_span})")
+h_fig(x=.20, y=1.1, s=title_text, color=off_white, highlight_textprops=[{'color':plot_color}],
+    font=t_font, fontsize=13, fontweight='bold', zorder=2)
 
-# # Total Honor Wons
-# total_honors = gold_medals + silver_medals + bronze_medals
-# t_hnr_txt = f'<Total Honors:> {total_honors}'
-# # h_fig(x=.45, y=.90, s=t_hnr_txt, color='grey', highlight_textprops=[{'color':'grey'}],
-# #        font=t_font, fontsize=13, fontweight='bold', zorder=2)
+# Total Honor Wons
+total_honors = gold_medals + silver_medals + bronze_medals
+t_hnr_txt = f'<Total Honors:> {total_honors}'
+# h_fig(x=.45, y=.90, s=t_hnr_txt, color='grey', highlight_textprops=[{'color':'grey'}],
+#        font=t_font, fontsize=13, fontweight='bold', zorder=2)
 
-# # Additional Text
-# brkdwn_txt = '\n'.join([f'{key} : {value}' for key, value in finals_dict.items()])
-# # Split the string into four smaller parts
-# parts = brkdwn_txt.split('\n')
+# Additional Text
+brkdwn_txt = '\n'.join([f'{key} : {value}' for key, value in finals_dict.items()])
+# Split the string into four smaller parts
+parts = brkdwn_txt.split('\n')
 
-# # Join in threes and format as strings
-# brkdwn_txt_1 = '\n'.join(parts[:3])
-# brkdwn_txt_2 = '\n'.join(parts[3:6])
-# brkdwn_txt_3 = '\n'.join(parts[6:9])
-# brkdwn_txt_4 = '\n'.join(parts[9:])
+# Join in threes and format as strings
+brkdwn_txt_1 = '\n'.join(parts[:3])
+brkdwn_txt_2 = '\n'.join(parts[3:6])
+brkdwn_txt_3 = '\n'.join(parts[6:9])
+brkdwn_txt_4 = '\n'.join(parts[9:])
 
-# brkdwn_txt1 = fig.text(x=0.25, y= 0.25, s=f'{brkdwn_txt_1}', color=off_white, linespacing= 2,
-#                 ha='left', va='top', font=b_font, fontsize=10, zorder=2)
-# brkdwn_txt2 = fig.text(x=0.42, y= 0.25, s=f'{brkdwn_txt_2}', color=off_white, linespacing= 2,
-#                 ha='left', va='top', font=b_font, fontsize=10, zorder=2)
-# brkdwn_txt3 = fig.text(x=0.54, y= 0.25, s=f'{brkdwn_txt_3}', color=off_white, linespacing= 2,
-#                 ha='left', va='top', font=b_font, fontsize=10, zorder=2)
-# brkdwn_txt4 = fig.text(x=0.67, y= 0.25, s=f'{brkdwn_txt_4}', color=off_white, linespacing= 2,
-#                 ha='left', va='top', font=b_font, fontsize=10, zorder=2)
+brkdwn_txt1 = fig.text(x=0.25, y= 0.25, s=f'{brkdwn_txt_1}', color=off_white, linespacing= 2,
+                ha='left', va='top', font=b_font, fontsize=10, zorder=2)
+brkdwn_txt2 = fig.text(x=0.42, y= 0.25, s=f'{brkdwn_txt_2}', color=off_white, linespacing= 2,
+                ha='left', va='top', font=b_font, fontsize=10, zorder=2)
+brkdwn_txt3 = fig.text(x=0.54, y= 0.25, s=f'{brkdwn_txt_3}', color=off_white, linespacing= 2,
+                ha='left', va='top', font=b_font, fontsize=10, zorder=2)
+brkdwn_txt4 = fig.text(x=0.67, y= 0.25, s=f'{brkdwn_txt_4}', color=off_white, linespacing= 2,
+                ha='left', va='top', font=b_font, fontsize=10, zorder=2)
 
-# brkdwn_txt1.set_path_effects([path_effects.Stroke(linewidth=.005, foreground=off_white), 
-#                             path_effects.Normal()])
-# brkdwn_txt2.set_path_effects([path_effects.Stroke(linewidth=.005, foreground=off_white), 
-#                             path_effects.Normal()])
-# brkdwn_txt3.set_path_effects([path_effects.Stroke(linewidth=.005, foreground=off_white), 
-#                             path_effects.Normal()])
-# brkdwn_txt4.set_path_effects([path_effects.Stroke(linewidth=.005, foreground=off_white), 
-#                             path_effects.Normal()])
+brkdwn_txt1.set_path_effects([path_effects.Stroke(linewidth=.005, foreground=off_white), 
+                            path_effects.Normal()])
+brkdwn_txt2.set_path_effects([path_effects.Stroke(linewidth=.005, foreground=off_white), 
+                            path_effects.Normal()])
+brkdwn_txt3.set_path_effects([path_effects.Stroke(linewidth=.005, foreground=off_white), 
+                            path_effects.Normal()])
+brkdwn_txt4.set_path_effects([path_effects.Stroke(linewidth=.005, foreground=off_white), 
+                            path_effects.Normal()])
 
-# #  Name Text
-# name_text = fig.text(x=0.52, y= -.10, s=author, ha='center', va='center', 
-#                 font=b_font, color=plot_color, alpha=.3, fontsize=10, zorder=2)
-# name_text.set_path_effects([path_effects.Stroke(linewidth=.005, foreground=off_white), 
-#                             path_effects.Normal()])
+#  Name Text
+name_text = fig.text(x=0.52, y= -.10, s=author, ha='center', va='center', 
+                font=b_font, color=plot_color, alpha=.3, fontsize=10, zorder=2)
+name_text.set_path_effects([path_effects.Stroke(linewidth=.005, foreground=off_white), 
+                            path_effects.Normal()])
 
-# # Figure Paddings 
-# # Pad Top 
-# fig.text(x=0.5, y= 1.13, s=pad_top, color=off_white, linespacing= 2,
-#                 ha='center', va='center', font=b_font, fontsize=b_fsize, zorder=2)
-# # Pad Bottom
-# fig.text(x=0.5, y= -.10, s=pad_end, color=off_white, linespacing= 2,
-#                 ha='center', va='center', font=b_font, fontsize=b_fsize, zorder=2)
-
+# Figure Paddings 
+# Pad Top 
+fig.text(x=0.5, y= 1.13, s=pad_top, color=off_white, linespacing= 2,
+                ha='center', va='center', font=b_font, fontsize=b_fsize, zorder=2)
+# Pad Bottom
+fig.text(x=0.5, y= -.10, s=pad_end, color=off_white, linespacing= 2,
+                ha='center', va='center', font=b_font, fontsize=b_fsize, zorder=2)
+fig
 # return fig
