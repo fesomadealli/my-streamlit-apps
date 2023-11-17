@@ -185,7 +185,7 @@ def Honors_Won():
     for i in range(len(t)):
             finals_dict['3rd Place PSHT (' + str(t['PSHTR'][i] + ')')] = t['count'][i]
     
-    #  Just a chck
+    # Just a check
     # finals_dict
     
     #  Setting up Figure & Axes
@@ -580,13 +580,13 @@ def Results_Pct(select_opponent, select_period, select_range):
         for i in range(len(cum_df)):
             if order[i] == 'W':
                 colors = [ax_color, plot_color]
-                num_wins = str(emp[order[i]])
+                num_wins = str(emp.get(f'{order[i]}', 0))
             if order[i] == 'D':
                 colors = [ax_color, plot_color]
-                num_draws = str(emp[order[i]])
+                num_draws = str(emp.get(f'{order[i]}', 0))
             if order[i] == 'L':
                 colors = [ax_color, plot_color]
-                num_loss = str(emp[order[i]])
+                num_loss = str(emp.get(f'{order[i]}', 0))
             ax[i].set_yticks([])
             ax[i].set_xticks([])
             ax[i].set_facecolor(ax_color)
