@@ -246,7 +246,7 @@ if plot_results is True:
            font=t_font, fontsize=t_fsize, fontweight='bold', zorder=2)
 
     # Endnotes
-    gms_incl = get_comps(df)
+    gms_incl = plot_functions.get_comps(df)
     endnote_text = (f"Matches Included: {gms_incl}\n" 
                     f"{add_note}")
     endnote = fig.text(x=0.51, y= -.38, s=endnote_text, color=off_white, linespacing= 2,
