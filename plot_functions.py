@@ -595,7 +595,7 @@ def Results_Pct(select_opponent, select_period, select_range):
             # Calculate % of that portion/selection
             pct = (emp.get(f'{order[i]}', 0) / total_games_played) * 100 
             # Create the donut chart
-            ax[i].pie([total_games_played - int(emp[order[i]]), int(emp[order[i]])], colors=colors, 
+            ax[i].pie([total_games_played - int(emp.get(order[i], 0), int(emp.get(order[i], 0)], colors=colors, 
                       startangle=90, wedgeprops={'width': 1.5})
             # Highlight the variable of interest in the center
             center_circle = plt.Circle((0, 0), 0.62, color=facecolor)
