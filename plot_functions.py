@@ -559,7 +559,7 @@ def Results_Pct(select_opponent, select_period, select_range):
     
     # Making Plot
     if plot_results is True:
-        #Filter the goals_df
+        # Filter the goals_df
         # Check for possible missing categorical variables 'W', 'D' or 'L' in select_period column
         # ...using reindex() with the fill_values argument/parameter passed into the method
         cum_df = df[f'{select_period}'].value_counts().reindex(order, fill_value=0).reset_index()
@@ -595,7 +595,7 @@ def Results_Pct(select_opponent, select_period, select_range):
             # Calculate % of that portion/selection
             pct = (emp.get(f'{order[i]}', 0) / total_games_played) * 100 
             # Create the donut chart
-            ax[i].pie([total_games_played-emp.get(f'{order[i]}'), emp.get(f'{order[i]}')], colors=colors,
+            ax[i].pie([total_games_played - int(emp[order[i]]), int(emp[order[i]])], colors=colors, 
                       startangle=90, wedgeprops={'width': 1.5})
             # Highlight the variable of interest in the center
             center_circle = plt.Circle((0, 0), 0.62, color=facecolor)
