@@ -270,10 +270,12 @@ if plot_results is True:
                     ha='center', va='center', font=b_font, fontsize=b_fsize, zorder=2)
 
     # plt.tight_layout()
-    return fig
+    fig
+    # return fig
 
 else:
     error_msg = ("No Plot to Display")
-    return error_msg
-fig
+    error_msg
+    # return error_msg
+# fig
 # return fig
