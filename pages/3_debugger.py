@@ -72,165 +72,206 @@ select_category = None
 # select_edition = None
 select_outcome = None
 
-import streamlit as st
-import pandas as pd
-import numpy as np
-
-
 # ------------------------------------------------------ #
 select_period = period = "HTR"
 
 # goals_df
 
 order = ['W', 'D', 'L']
+"""
+Possible Func Mods: select_opponent, select_period (optional: select_df to Use)
 
-# Creating the Honors Dataframe
-oau_giants = pd.read_csv("assets/oau-giants.csv")
-honors_df = oau_giants[(oau_giants['CompGroup'] != 'PreNUGA') &
-                        (oau_giants['Tie']=='Final') | (oau_giants['Tie']=='3rd Place') | 
-                        (oau_giants['TieDescr']=='Final') | (oau_giants['TieDescr']=='3rd Place')]
+select_opponent: All_teams | Oppnt_name
+select_period: FTR | HTR | SHR
+select_range: All_Games | Home_Games
+"""
+plot_results = True
 
-honors_df.reset_index(drop=True, inplace=True)
-# Tidying some ends for data consistency
-#Changing Ties to 3rd Place at rows 4 & 6 respectively
-honors_df.at[4, 'Tie'] = '3rd Place'
-honors_df.at[6, 'Tie'] = '3rd Place'
-#Changing TieDescr to Super 4 at rows 4 & 6 respectively
-honors_df.at[4, 'TieDescr'] = 'Super 4'
-honors_df.at[6, 'TieDescr'] = 'Super 4'
-
-# Create empty dictionary
-finals_dict = {}
-
-# populating the dictionary
-#  Total Num of Finals Played - Main Finals & Third Place
-finals_dict['Honors Contested'] = len(honors_df)
-
-# Getting number of games played in Finals & 3rd Place contests
-h = honors_df.Tie.value_counts().reset_index()
-h = h.rename(columns={'count' : 'Matches'})
-
-for i in range(len(h)):
-    finals_dict[str(h['Tie'][i] + ' Played')] = h['Matches'][i]
+if select_range == 'Home_Games':
+    if select_opponent != 'All_teams':
+        if plot_functions.confirm_fixture_on_homeground(select_opponent) is False:
+            return(f"No Meetings With {select_opponent} on Homeground")
+            # plot_results = False
+        else:
+            df = h_games[h_games['Opponent'] == select_opponent]
+    else:
+        df = h_games
     
-# Split dfs    
-# Finals
-finals_df = honors_df[(honors_df['Tie'] == 'Final')]
+elif select_range == 'All_Games':
+    df = goals_df
+    if select_opponent != 'All_teams':
+        df = goals_df[(goals_df.Opponent == select_opponent)]
 
-res_f = finals_df.FTR.value_counts().loc[order].reset_index()
-for i in range(len(res_f)):
-    finals_dict['Final ('+ str(res_f['FTR'][i]) +')'] = res_f['count'][i]
+# Making Plot
+if plot_results is True:
+    #Filter the goals_df
+    # Check for possible missing categorical variables 'W', 'D' or 'L' in select_period column
+    # ...using reindex() with the fill_values argument/parameter passed into the method
+    cum_df = df[f'{select_period}'].value_counts().reindex(order, fill_value=0).reset_index()
+    cum_df
+    
+#     # Data for the donut chart
+#     total_games_played = cum_df[f'{select_period}'].sum()
+
+#     #  Setting up Figure & Axes
+#     fig, ax = plt.subplots(1,3, figsize=(12, 4), facecolor=facecolor, constrained_layout=True)
+
+#     # dictionary to access the contents of the Cumulative Results Column
+#     emp = {}
+#     for i in range(len(cum_df)):   #Can't put this block of code in the second for loop because we need  
+#         emp[cum_df['index'][i]] = cum_df[f'{select_period}'][i] #to fill the dctionary first before accessing it.
 
 
-#  3rd Place Playoffs  
-third_place_df = honors_df[(honors_df['Tie'] == '3rd Place')]   
+#     for i in range(len(cum_df)):
+#         if order[i] == 'W':
+#             colors = [ax_color, plot_color]
+#             num_wins = str(emp[order[i]])
+#         if order[i] == 'D':
+#             colors = [ax_color, plot_color]
+#             num_draws = str(emp[order[i]])
+#         if order[i] == 'L':
+#             colors = [ax_color, plot_color]
+#             num_loss = str(emp[order[i]])
+#         ax[i].set_yticks([])
+#         ax[i].set_xticks([])
+#         ax[i].set_facecolor(ax_color)
+#         hide_spines(axes=ax[i], which_spine="all")
+       
+#         # Calculate % of that portion/selection
+#         pct = (emp[order[i]] / total_games_played) * 100 
+#         # Create the donut chart
+#         ax[i].pie([total_games_played-emp[order[i]], emp[order[i]]], colors=colors,
+#                   startangle=90, wedgeprops={'width': 1.5})
+#         # Highlight the variable of interest in the center
+#         center_circle = plt.Circle((0, 0), 0.62, color=facecolor)
+#         ax[i].add_artist(center_circle)
+#         # Add the corresponding percentage text in the center
+#         # Pct Labels
+#         h_axs(ax=ax[i], x=-.38, y=.05, s=f'{pct: .2f}%', color=off_white, 
+#               font=t_font, fontsize=18, fontweight='bold', zorder=2)
 
-res_3rd = third_place_df.FTR.value_counts().loc[order].reset_index()
-for i in range(len(res_3rd)):
-    finals_dict['3rd Place ('+ str(res_3rd['FTR'][i]) +')'] = res_3rd['count'][i]   
+#     # Wins% Label
+#     h_axs(ax=ax[0], x=-.23, y=-.15, s='<Win %>', color=off_white, 
+#           highlight_textprops=[{'color':plot_color}], font=b_font,
+#           fontsize=b_fsize, fontweight='bold', zorder=2)
+#     # Draws% Label
+#     h_axs(ax=ax[1], x=-.21, y=-.15, s='<Draw %>', color=off_white,
+#           highlight_textprops=[{'color':plot_color}], font=b_font,
+#           fontsize=b_fsize, fontweight='bold', zorder=2) 
+#     # Loss% Label
+#     h_axs(ax=ax[2], x=-.21, y=-.15, s='<Loss %>', color=off_white,
+#           highlight_textprops=[{'color':plot_color}], font=b_font,
+#           fontsize=b_fsize, fontweight='bold', zorder=2)
 
-# Adding Penalty Records
-#  For PSHTR in Finals
-f = finals_df.PSHTR.value_counts().reset_index()
-for i in range(len(f)): 
-        finals_dict['Final PSHT (' + str(f['PSHTR'][i] + ')')] = f['count'][i]
-        
-#  For PSHTR in Third Place Contests
-t = third_place_df.PSHTR.value_counts().reset_index()
-for i in range(len(t)):
-        finals_dict['3rd Place PSHT (' + str(t['PSHTR'][i] + ')')] = t['count'][i]
+#     # Title Text x-location on Figure if the Opponent Name is to be printed on the Title
+#     title_xloc=.25
+#     ttl_space = hspace*4
+#     oppnt_name_char = len(select_opponent)
+#     if select_opponent != 'All_teams':
+#         if select_opponent != 'Successful Christian Mission FC':
+#             if oppnt_name_char>3 & oppnt_name_char<=15:
+#                 title_xloc=.21
+#                 ttl_space = hspace*5
+#         else: 
+#             select_opponent = 'Successful CMFC'
+#             title_xloc=.21
+#             ttl_space = hspace*10
 
-finals_dict
+#     # Title Text
+#     title_text=" "
+#     if select_period == 'FTR':
+#         if select_opponent != 'All_teams':
+#             if select_range == 'Home_Games':
+#                 title_text = (f"{team} <FT MATCH RESULTS%> vs. {select_opponent.upper()} IN HOME GAMES\n"
+#                               f"{ttl_space}UNDER {coach.upper()} ({data_span})")
+#             elif select_range == "All_Games":
+#                 title_text = (f"{team} <FT MATCH RESULTS%> vs. {select_opponent.upper()} IN ALL MEETINGS\n"
+#                               f"{ttl_space}UNDER {coach.upper()} ({data_span})")
+#         # No Particular Opponent Selected        
+#         elif select_opponent == "All_teams":
+#             if select_range == 'Home_Games':
+#                 title_text = (f"{team} <FT MATCH RESULTS%> IN ALL HOME GAMES UNDER\n"
+#                               f"{hspace*8}{coach.upper()} ({data_span})")
+#             elif select_range == "All_Games":
+#                 title_text = f"{team} <FT MATCH RESULTS%> UNDER {coach.upper()} ({data_span})"
+#                 title_xloc=.14
 
-#  Setting up Figure & Axes
-fig, ax = plt.subplots(figsize=(12, 4), facecolor=facecolor)
-ax.set(facecolor=facecolor, xticks=([]), yticks=([]))
-plot_functions.hide_spines(axes=ax, which_spine='all')
+#     if select_period == 'HTR':
+#         if select_opponent != 'All_teams':
+#             if select_range == 'Home_Games':
+#                 title_text = (f"{team} <HT MATCH RESULTS%> vs. {select_opponent.upper()} IN HOME GAMES\n"
+#                               f"{ttl_space}UNDER {coach.upper()} ({data_span})")
+#             elif select_range == "All_Games":
+#                 title_text = (f"{team} <HT MATCH RESULTS%> vs. {select_opponent.upper()} IN ALL MEETINGS\n"
+#                               f"{ttl_space}UNDER {coach.upper()} ({data_span})")
+#         # No Particular Opponent Selected        
+#         elif select_opponent == "All_teams":
+#             if select_range == 'Home_Games':
+#                 title_text = (f"{team} <HT MATCH RESULTS%> IN ALL HOME GAMES UNDER\n"
+#                               f"{hspace*8}{coach.upper()} ({data_span})")
+#             elif select_range == "All_Games":
+#                 title_text = f"{team} <HT MATCH RESULTS%> UNDER {coach.upper()} ({data_span})"
+#                 title_xloc=.14
 
-# Creating the Podium 
-pod_second = Rectangle((0.2,.5),.2,.15, fc='grey', ec='grey')
-pod_first = Rectangle((0.4,.5),.2,.2, fc='grey', ec='grey')
-pod_third = Rectangle((0.6,.5),.2,.1, fc='grey', ec='grey')
+#     if select_period == 'SHR':
+#         if select_opponent != 'All_teams':
+#             if select_range == 'Home_Games':
+#                 title_text = (f"{team} <2ND HALF MATCH RESULTS%> vs. {select_opponent.upper()}"
+#                               f" IN HOME GAMES\n{ttl_space}UNDER {coach.upper()} ({data_span})")
+#             elif select_range == "All_Games":
+#                 title_text = (f"{team} <2ND HALF MATCH RESULTS%> vs. {select_opponent.upper()}"
+#                               f" IN ALL MEETINGS\n{ttl_space}UNDER {coach.upper()} ({data_span})")
+#         # No Particular Opponent Selected       
+#         elif select_opponent == "All_teams":
+#             if select_range == 'Home_Games':
+#                 title_text = (f"{team} <2ND HALF MATCH RESULTS%> IN ALL HOME GAMES UNDER\n"
+#                               f"{hspace*8}{coach.upper()} ({data_span})")
+#             elif select_range == "All_Games":
+#                     title_text = f"{team} <2ND HALF MATCH RESULTS%> UNDER {coach.upper()} ({data_span})"
+#                     title_xloc=.14
 
-podium = [pod_third, pod_first, pod_second]
-for part in podium:
-    ax.add_patch(part)
+#     # Set titles for the figure and the subplot respectively
+#     h_fig(x=title_xloc, y=1.18, s=title_text, color=off_white, highlight_textprops=[{'color':plot_color}],
+#            font=t_font, fontsize=t_fsize, fontweight='bold', zorder=2)
 
-# Podium Labels
-ax.text(x=.3, y= .4, s='Silver', color='grey', ha='center',
-            va='center', font=b_font, fontsize=10, zorder=2)
-ax.text(x=.5, y= .4, s='Gold', color='grey', ha='center',
-            va='center', font=b_font, fontsize=10, zorder=2)
-ax.text(x=.7, y= .4, s='Bronze', color='grey', ha='center',
-            va='center', font=b_font, fontsize=10, zorder=2)
+#     # FT Results Breakdown
+#     txt = f"<Games Played:> " + str(len(df)) + f" <| Wins:> {num_wins}" + f" <| Draws:> {num_draws}" + f" <| Loss:> {num_loss}"
 
-# Annotations
-# Text for count Honors Won (get() method has been set to return 0 for absent keys)
-gold_medals = finals_dict.get('Final (W)', 0) + finals_dict.get('Final PSHT (W)', 0)
-silver_medals = finals_dict.get('Final (L)', 0) + finals_dict.get('Final PSHT (L)', 0)
-bronze_medals = finals_dict.get('3rd Place (W)', 0) + finals_dict.get('3rd Place PSHT (W)', 0)
+#     h_fig(x=.22, y=-.08, s=txt, color=off_white, highlight_textprops=[{'color':plot_color}, 
+#                                                                       {'color':plot_color},
+#                                                                       {'color':plot_color},
+#                                                                       {'color':plot_color}],
+#            font=t_font, fontsize=t_fsize, fontweight='bold', zorder=2)
 
-ax.text(x=.3, y= .7, s=f'{silver_medals}', color=plot_color, ha='center',
-            va='center', font=t_font, fontweight='bold', fontsize=18, zorder=2)
-ax.text(x=.5, y= .8, s=f'{gold_medals}', color=plot_color, ha='center',
-            va='center', font=t_font, fontweight='bold', fontsize=18, zorder=2)
-ax.text(x=.7, y= .7, s=f'{bronze_medals}', color=plot_color, ha='center',
-            va='center', font=t_font, fontweight='bold', fontsize=18, zorder=2)
+#     # Endnotes
+#     gms_incl = get_comps(df)
+#     endnote_text = (f"Matches Included: {gms_incl}\n" 
+#                     f"{add_note}")
+#     endnote = fig.text(x=0.51, y= -.38, s=endnote_text, color=off_white, linespacing= 2,
+#                        ha='center', va='center', font=b_font, fontsize=b_fsize, zorder=2)
 
-# Title Text
-custom_space = " " #Needed cause of the behavioral ppts highlight-text on \n
-title_text = (f"A PODIUM PLOT OF THE <HONORS WON> BY {team} UNDER {coach.upper()}\n"
-                f"\n\n{custom_space*30} ({data_span})")
-h_fig(x=.20, y=1.1, s=title_text, color=off_white, highlight_textprops=[{'color':plot_color}],
-    font=t_font, fontsize=13, fontweight='bold', zorder=2)
+#     # Name Text
+#     name_text = fig.text(x=0.51, y= -.55, s=author, ha='center', va='center', 
+#                        font=b_font, color=plot_color, alpha=.3, fontsize=b_fsize, zorder=2)
 
-# Total Honor Wons
-total_honors = gold_medals + silver_medals + bronze_medals
-t_hnr_txt = f'<Total Honors:> {total_honors}'
-# h_fig(x=.45, y=.90, s=t_hnr_txt, color='grey', highlight_textprops=[{'color':'grey'}],
-#        font=t_font, fontsize=13, fontweight='bold', zorder=2)
+#     # Path Effects for texts
+#     endnote.set_path_effects([path_effects.Stroke(linewidth=.018, foreground=off_white),
+#                               path_effects.Normal()])
+#     name_text.set_path_effects([path_effects.Stroke(linewidth=.005, foreground=plot_color), 
+#                                 path_effects.Normal()])
 
-# Additional Text
-brkdwn_txt = '\n'.join([f'{key} : {value}' for key, value in finals_dict.items()])
-# Split the string into four smaller parts
-parts = brkdwn_txt.split('\n')
+#     # Figure Paddings         
+#     fig.text(x=0.19, y= 1.20, s=pad_top, color=off_white, linespacing= 2,
+#                     ha='center', va='center', font=b_font, fontsize=b_fsize, zorder=2)
 
-# Join in threes and format as strings
-brkdwn_txt_1 = '\n'.join(parts[:3])
-brkdwn_txt_2 = '\n'.join(parts[3:6])
-brkdwn_txt_3 = '\n'.join(parts[6:9])
-brkdwn_txt_4 = '\n'.join(parts[9:])
+#     fig.text(x=0.51, y= -.50, s=pad_end, color=off_white, linespacing= 2,
+#                     ha='center', va='center', font=b_font, fontsize=b_fsize, zorder=2)
 
-brkdwn_txt1 = fig.text(x=0.25, y= 0.25, s=f'{brkdwn_txt_1}', color=off_white, linespacing= 2,
-                ha='left', va='top', font=b_font, fontsize=10, zorder=2)
-brkdwn_txt2 = fig.text(x=0.42, y= 0.25, s=f'{brkdwn_txt_2}', color=off_white, linespacing= 2,
-                ha='left', va='top', font=b_font, fontsize=10, zorder=2)
-brkdwn_txt3 = fig.text(x=0.54, y= 0.25, s=f'{brkdwn_txt_3}', color=off_white, linespacing= 2,
-                ha='left', va='top', font=b_font, fontsize=10, zorder=2)
-brkdwn_txt4 = fig.text(x=0.67, y= 0.25, s=f'{brkdwn_txt_4}', color=off_white, linespacing= 2,
-                ha='left', va='top', font=b_font, fontsize=10, zorder=2)
+#     # plt.tight_layout()
+#     return fig
 
-brkdwn_txt1.set_path_effects([path_effects.Stroke(linewidth=.005, foreground=off_white), 
-                            path_effects.Normal()])
-brkdwn_txt2.set_path_effects([path_effects.Stroke(linewidth=.005, foreground=off_white), 
-                            path_effects.Normal()])
-brkdwn_txt3.set_path_effects([path_effects.Stroke(linewidth=.005, foreground=off_white), 
-                            path_effects.Normal()])
-brkdwn_txt4.set_path_effects([path_effects.Stroke(linewidth=.005, foreground=off_white), 
-                            path_effects.Normal()])
-
-#  Name Text
-name_text = fig.text(x=0.52, y= -.10, s=author, ha='center', va='center', 
-                font=b_font, color=plot_color, alpha=.3, fontsize=10, zorder=2)
-name_text.set_path_effects([path_effects.Stroke(linewidth=.005, foreground=off_white), 
-                            path_effects.Normal()])
-
-# Figure Paddings 
-# Pad Top 
-fig.text(x=0.5, y= 1.13, s=pad_top, color=off_white, linespacing= 2,
-                ha='center', va='center', font=b_font, fontsize=b_fsize, zorder=2)
-# Pad Bottom
-fig.text(x=0.5, y= -.10, s=pad_end, color=off_white, linespacing= 2,
-                ha='center', va='center', font=b_font, fontsize=b_fsize, zorder=2)
-fig
+# else:
+#     error_msg = ("No Plot to Display")
+#     return error_msg
+# fig
 # return fig
