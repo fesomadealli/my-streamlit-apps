@@ -90,7 +90,8 @@ plot_results = True
 if select_range == 'Home_Games':
     if select_opponent != 'All_teams':
         if plot_functions.confirm_fixture_on_homeground(select_opponent) is False:
-            return(f"No Meetings With {select_opponent} on Homeground")
+            st.write(f"No Meetings With {select_opponent} on Homeground")
+            # return(f"No Meetings With {select_opponent} on Homeground")
             # plot_results = False
         else:
             df = h_games[h_games['Opponent'] == select_opponent]
