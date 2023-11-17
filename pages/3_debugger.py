@@ -61,7 +61,7 @@ results_df, h_games, goals_df = load_data()
 
 import plot_functions
 
-select_opponent = "UNILAG"
+select_opponent = "All_teams"
 select_period = "FTR"
 select_range = "All_Games"
 select_comp=None
