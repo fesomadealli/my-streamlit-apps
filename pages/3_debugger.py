@@ -59,7 +59,7 @@ def load_data():
 
 results_df, h_games, goals_df = load_data()
 
-import plot_functions
+# import plot_functions
 
 select_opponent = "UNILAG"
 select_period = "FTR"
@@ -142,7 +142,7 @@ if plot_results is True:
         # Calculate % of that portion/selection
         pct = (emp[order[i]] / total_games_played) * 100 
         # Create the donut chart
-        ax[i].pie([total_games_played-emp[order[i]], emp[order[i]]], colors=colors,
+        ax[i].pie([total_games_played-emp[order[i]], emp[order[i]]], colors=colors, 
                   startangle=90, wedgeprops={'width': 1.5})
         # Highlight the variable of interest in the center
         center_circle = plt.Circle((0, 0), 0.62, color=facecolor)
@@ -277,5 +277,3 @@ else:
     error_msg = ("No Plot to Display")
     error_msg
     # return error_msg
-# fig
-# return fig
