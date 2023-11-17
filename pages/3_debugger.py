@@ -108,7 +108,7 @@ if plot_results is True:
     #Filter the goals_df
     # Check for possible missing categorical variables 'W', 'D' or 'L' in select_period column
     # ...using reindex() with the fill_values argument/parameter passed into the method
-    cum_df = df['count'].value_counts().reindex(order, fill_value=0).reset_index()
+    cum_df = df[f'{select_period}'].value_counts().reindex(order, fill_value=0).reset_index()
     cum_df
     
     # Data for the donut chart
