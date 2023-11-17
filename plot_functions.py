@@ -558,13 +558,13 @@ def Results_Pct(select_opponent, select_period, select_range):
             df = goals_df[(goals_df.Opponent == select_opponent)]
     
     # Making Plot
-    if plot_results is True:
-        # Filter the goals_df
-        # Check for possible missing categorical variables 'W', 'D' or 'L' in select_period column
-        # ...using reindex() with the fill_values argument/parameter passed into the method
-        cum_df = df[f'{select_period}'].value_counts().reindex(order, fill_value=0).reset_index()
-        
-
+if plot_results is True:
+    #Filter the goals_df
+    # Check for possible missing categorical variables 'W', 'D' or 'L' in select_period column
+    # ...using reindex() with the fill_values argument/parameter passed into the method
+    cum_df = df[f'{select_period}'].value_counts().reindex(order, fill_value=0).reset_index()
+    cum_df
+    
     # Data for the donut chart
     total_games_played = cum_df['count'].sum()
 
@@ -575,48 +575,49 @@ def Results_Pct(select_opponent, select_period, select_range):
     emp = {}
     for i in range(len(cum_df)):   #Can't put this block of code in the second for loop because we need  
         emp[cum_df[f'{select_period}'][i]] = cum_df['count'][i] #to fill the dctionary first before accessing it.
+    
+    emp
 
+    for i in range(len(cum_df)):
+        if order[i] == 'W':
+            colors = [ax_color, plot_color]
+            num_wins = str(emp.get(f'{order[i]}', 0))
+        if order[i] == 'D':
+            colors = [ax_color, plot_color]
+            num_draws = str(emp.get(f'{order[i]}', 0))
+        if order[i] == 'L':
+            colors = [ax_color, plot_color]
+            num_loss = str(emp.get(f'{order[i]}', 0))
+        ax[i].set_yticks([])
+        ax[i].set_xticks([])
+        ax[i].set_facecolor(ax_color)
+        plot_functions.hide_spines(axes=ax[i], which_spine="all")
+       
+        # Calculate % of that portion/selection
+        pct = (emp[order[i]] / total_games_played) * 100 
+        # Create the donut chart
+        ax[i].pie([total_games_played - int(emp[order[i]]), int(emp[order[i]])], colors=colors, 
+                  startangle=90, wedgeprops={'width': 1.5})
+        # Highlight the variable of interest in the center
+        center_circle = plt.Circle((0, 0), 0.62, color=facecolor)
+        ax[i].add_artist(center_circle)
+        # Add the corresponding percentage text in the center
+        # Pct Labels
+        h_axs(ax=ax[i], x=-.38, y=.05, s=f'{pct: .2f}%', color=off_white, 
+              font=t_font, fontsize=18, fontweight='bold', zorder=2)
 
-        for i in range(len(cum_df)):
-            if order[i] == 'W':
-                colors = [ax_color, plot_color]
-                num_wins = str(emp.get(f'{order[i]}', 0))
-            if order[i] == 'D':
-                colors = [ax_color, plot_color]
-                num_draws = str(emp.get(f'{order[i]}', 0))
-            if order[i] == 'L':
-                colors = [ax_color, plot_color]
-                num_loss = str(emp.get(f'{order[i]}', 0))
-            ax[i].set_yticks([])
-            ax[i].set_xticks([])
-            ax[i].set_facecolor(ax_color)
-            hide_spines(axes=ax[i], which_spine="all")
-           
-            # Calculate % of that portion/selection
-            pct = (emp.get(f'{order[i]}', 0) / total_games_played) * 100 
-            # Create the donut chart
-            ax[i].pie([total_games_played - int(emp.get(order[i], 0)), int(emp.get(order[i], 0))], colors=colors, 
-                      startangle=90, wedgeprops={'width': 1.5})
-            # Highlight the variable of interest in the center
-            center_circle = plt.Circle((0, 0), 0.62, color=facecolor)
-            ax[i].add_artist(center_circle)
-            # Add the corresponding percentage text in the center
-            # Pct Labels
-            h_axs(ax=ax[i], x=-.38, y=.05, s=f'{pct: .2f}%', color=off_white, 
-                  font=t_font, fontsize=18, fontweight='bold', zorder=2)
-
-        # Wins% Label
-        h_axs(ax=ax[0], x=-.23, y=-.15, s='<Win %>', color=off_white, 
-              highlight_textprops=[{'color':plot_color}], font=b_font,
-              fontsize=b_fsize, fontweight='bold', zorder=2)
-        # Draws% Label
-        h_axs(ax=ax[1], x=-.21, y=-.15, s='<Draw %>', color=off_white,
-              highlight_textprops=[{'color':plot_color}], font=b_font,
-              fontsize=b_fsize, fontweight='bold', zorder=2) 
-        # Loss% Label
-        h_axs(ax=ax[2], x=-.21, y=-.15, s='<Loss %>', color=off_white,
-              highlight_textprops=[{'color':plot_color}], font=b_font,
-              fontsize=b_fsize, fontweight='bold', zorder=2)
+    # Wins% Label
+    h_axs(ax=ax[0], x=-.23, y=-.15, s='<Win %>', color=off_white, 
+          highlight_textprops=[{'color':plot_color}], font=b_font,
+          fontsize=b_fsize, fontweight='bold', zorder=2)
+    # Draws% Label
+    h_axs(ax=ax[1], x=-.21, y=-.15, s='<Draw %>', color=off_white,
+          highlight_textprops=[{'color':plot_color}], font=b_font,
+          fontsize=b_fsize, fontweight='bold', zorder=2) 
+    # Loss% Label
+    h_axs(ax=ax[2], x=-.21, y=-.15, s='<Loss %>', color=off_white,
+          highlight_textprops=[{'color':plot_color}], font=b_font,
+          fontsize=b_fsize, fontweight='bold', zorder=2)
 
         # Title Text x-location on Figure if the Opponent Name is to be printed on the Title
         title_xloc=.25
