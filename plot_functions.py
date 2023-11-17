@@ -564,16 +564,17 @@ def Results_Pct(select_opponent, select_period, select_range):
         # ...using reindex() with the fill_values argument/parameter passed into the method
         cum_df = df[f'{select_period}'].value_counts().reindex(order, fill_value=0).reset_index()
         
-        # Data for the donut chart
-        total_games_played = cum_df[f'{select_period}'].sum()
 
-        #  Setting up Figure & Axes
-        fig, ax = plt.subplots(1,3, figsize=(12, 4), facecolor=facecolor, constrained_layout=True)
+    # Data for the donut chart
+    total_games_played = cum_df['count'].sum()
 
-        # dictionary to access the contents of the Cumulative Results Column
-        emp = {}
-        for i in range(len(cum_df)):   #Can't put this block of code in the second for loop because we need  
-            emp[cum_df['index'][i]] = cum_df[f'{select_period}'][i] #to fill the dctionary first before accessing it.
+    #  Setting up Figure & Axes
+    fig, ax = plt.subplots(1,3, figsize=(12, 4), facecolor=facecolor, constrained_layout=True)
+
+    # dictionary to access the contents of the Cumulative Results Column
+    emp = {}
+    for i in range(len(cum_df)):   #Can't put this block of code in the second for loop because we need  
+        emp[cum_df[f'{select_period}'][i]] = cum_df['count'][i] #to fill the dctionary first before accessing it.
 
 
         for i in range(len(cum_df)):
