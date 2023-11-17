@@ -1657,7 +1657,7 @@ def get_All_time_record(select_opponent):
     order = ['W','D','L'] 
     outcomes_vs_team = temp_df.FTR.value_counts().reindex(order, fill_value=0).reset_index()
     for i in range(len(outcomes_vs_team)):
-        outcome_dict[outcomes_vs_team['FTR'][i]] = outcomes_vs_team.count[i]  
+        outcome_dict[outcomes_vs_team['FTR'][i]] = outcomes_vs_team['count'][i]  
     
     # Format response String    
     record_vs_team = f"W{outcome_dict['W']} D{outcome_dict['D']} L{outcome_dict['L']}"
