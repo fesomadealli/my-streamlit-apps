@@ -473,7 +473,7 @@ def Games_Played():
     ax_plt.set(xlabel=None,  ylabel=None, yticks=([]))
 
     # # Add values at the end of each bar
-    for i, v in enumerate(gms_per_year['Year']*.5):
+    for i, v in enumerate(gms_per_year['count']*.5):
         gms_cnt = ax.text(i-.1, v+1.25, str(int(v*2)), va='center', color=off_white, fontweight='semibold',
                         font=t_font, fontsize=12);
         gms_cnt.set_path_effects([path_effects.Stroke(linewidth=.005, foreground=off_white), 
