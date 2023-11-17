@@ -467,7 +467,7 @@ def Games_Played():
     hide_spines(axes=ax, which_spine='all')
 
     # Create a horizontal barplot with Seaborn on the ax 
-    ax_plt = sns.barplot(y=gms_per_year['Year']*.5, x=gms_per_year['index'], ax=ax, color=plot_color)
+    ax_plt = sns.barplot(y=gms_per_year['count']*.5, x=gms_per_year['Year'], ax=ax, color=plot_color)
 
     # Axes customization
     ax_plt.set(xlabel=None,  ylabel=None, yticks=([]))
