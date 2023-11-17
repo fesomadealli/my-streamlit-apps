@@ -2530,7 +2530,7 @@ def display_plot(plot_type, plot_alt=None, args=None):
     if plot_type == "Form Guide":
         figure = Form_Guide(select_opponent=args.get('select_opponent'),
                             select_period=args.get('select_period'),
-                            select_range=args.get('select_range'))
+                            select_range=args.get('select_range'), stack=10)
 
     if plot_type == "Teams Faced":
         figure = Teams_Faced()
