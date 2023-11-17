@@ -591,7 +591,7 @@ def Results_Pct(select_opponent, select_period, select_range):
             ax[i].set_yticks([])
             ax[i].set_xticks([])
             ax[i].set_facecolor(ax_color)
-            plot_functions.hide_spines(axes=ax[i], which_spine="all")
+            hide_spines(axes=ax[i], which_spine="all")
            
             # Calculate % of that portion/selection
             pct = (emp[order[i]] / total_games_played) * 100 
