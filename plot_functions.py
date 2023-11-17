@@ -593,7 +593,7 @@ def Results_Pct(select_opponent, select_period, select_range):
             hide_spines(axes=ax[i], which_spine="all")
            
             # Calculate % of that portion/selection
-            pct = (emp[order[i]] / total_games_played) * 100 
+            pct = (emp.get(f'{order[i]}', 0) / total_games_played) * 100 
             # Create the donut chart
             ax[i].pie([total_games_played-emp[order[i]], emp[order[i]]], colors=colors,
                       startangle=90, wedgeprops={'width': 1.5})
