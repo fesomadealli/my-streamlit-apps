@@ -2502,10 +2502,13 @@ def display_plot(plot_type, plot_alt=None, args=None):
     if plot_type == "Goals Chart":
         corr = "goals_corr"
         if plot_alt == "Goals Ratio":
-            figure = Goals_Plot(select_period=args.get("select_period"),
-                                select_category=args.get('select_category'),
-                                select_opponent=args.get("select_opponent"),
-                                select_outcome=args.get('select_outcome'))
+            try:
+                figure = Goals_Plot(select_period=args.get("select_period"),
+                                    select_category=args.get('select_category'),
+                                    select_opponent=args.get("select_opponent"),
+                                    select_outcome=args.get('select_outcome'))
+            except UnboundLocalError:
+                pass #do nothing
         elif plot_alt == "Common Scorelines":
             figure = Common_Scoreline(select_opponent=args.get("select_opponent"),
                                       select_period=args.get("select_period"),
