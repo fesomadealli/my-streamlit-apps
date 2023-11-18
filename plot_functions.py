@@ -1283,7 +1283,7 @@ def Goals_Plot(select_period, select_category,
             game_cnt_text = 'Game'
 
         gls_text = (f'<Goals Scored Average:> {GF_Avg} | <Goals Allowed Average:> {GA_Avg}{newline*4}'
-                    f'{hspace*28}({num_of_gms} {game_cnt_text})')
+                    f'{hspace*35}({num_of_gms} {game_cnt_text})') #hspace was originally 22 by default
         h_fig(x=.20, y=-.23, s=gls_text, color=off_white, highlight_textprops=[ {'color': bar_color},
                                                                                 {'color': bar_color}],
            font=t_font, fontsize=t_fsize, fontweight='bold', va='center', zorder=2)
