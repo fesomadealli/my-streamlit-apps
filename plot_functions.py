@@ -2567,10 +2567,15 @@ def display_plot(plot_type, plot_alt=None, args=None):
                                             val=True)
             
         elif plot_alt == "Common Scorelines":
-            figure = Common_Scoreline(select_opponent=args.get("select_opponent"),
-                                      select_period=args.get("select_period"),
-                                      select_range=args.get("select_range"),
-                                      select_comp=None)
+            try:
+                figure = Common_Scoreline(select_opponent=args.get("select_opponent"),
+                                          select_period=args.get("select_period"),
+                                          select_range=args.get("select_range"),
+                                          select_comp=None)
+            except UnboundLocalError:
+                pass #do nothing
+            except ValueError:
+                return ("No match for this selection!")
 
     if plot_type == "Competitions":
         if plot_alt == "Result Aggregate":
