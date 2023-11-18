@@ -17,7 +17,7 @@ facts= [
     "Fact 15:\n\nUNIBEN 2011 in Benin was the only edition of the NUGA Games the OAU MFT attended under CEO and didn't play in the Finals courtesy of an early exit in the group stage.",
     "Fact 16:\n\nCoach CEO never lost the first-half in his first 13 games in charge of the OAU MFT (at competitions).",
     "Fact 17:\n\nLongest Unbeaten runs at competitions attended:\n\nNUGA Games: 8\n\nHiFL: 7\n\nNUFOL Games: 5.",
-    "Fact 18:\n\nSince trailing 0-2 in Makurdi at HT, the OAU MFT under CEO enjoyed an impressive run of 29 first halves without going behind! A record that more than doubled the one initially set by CEO when",
+    "Fact 18:\n\nSince trailing 0-2 in Makurdi at HT, the OAU MFT under CEO enjoyed an impressive run of 29 first halves without going behind! A record that more than doubled the one initially set by CEO (13) when he first took charge.",
     "Fact 19:\n\nOAU MFT under CEO only ever lost both halves in a game once, and it was in a 3-0 defeat (Away) to the University of Agriculture, Makurdi in 2018:\n\n0-2 (L) in the First half,\n\n0-1 (L) in the Second half.",
     "Fact 20:\n\nOAU MFT Longest Unbeaten Runs Per Half (all comps):\n\nFirst-half: 29 Games\n\nSecond Half: 14 Games",
     "Fact 21:\n\nOAU MFT equalled their longest unbeaten run (10 Games) under CEO in the 2-0 win over LASU at the mainbowl in 2019. Goals from Adeyemi Opeyemi and Olaniyi Muyiwa earned the team the deserved win.",
