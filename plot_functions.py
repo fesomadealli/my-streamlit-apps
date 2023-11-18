@@ -2575,7 +2575,8 @@ def display_plot(plot_type, plot_alt=None, args=None):
             except UnboundLocalError:
                 pass #do nothing
             except ValueError:
-                return ("No match for this selection!")
+                figure =  ("No match for this selection!") 
+                # pass #do nothing
 
     if plot_type == "Competitions":
         if plot_alt == "Result Aggregate":
