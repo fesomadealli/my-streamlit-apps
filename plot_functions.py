@@ -1807,7 +1807,7 @@ def get_Competition_record(select_comp=None, select_edition=None):
             outcome_dict[outcome_in_gms['FTR'][i]] = outcome_in_gms.['count'][i]  
         
         # Format response String    
-        record_vs_team = f"W{outcome_dict.get('W')} D{outcome_dict.get('D')} L{outcome_dict.get('L')}"
+        record_vs_team = f"W{outcome_dict.get('W', '0')} D{outcome_dict.get('D', '0')} L{outcome_dict.get('L', '0')}"
         # Add item to dictionary
         record_dict.update({'Outcome Summary' : record_vs_team})
         
