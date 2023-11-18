@@ -1804,7 +1804,7 @@ def get_Competition_record(select_comp=None, select_edition=None):
         order = ['W','D','L'] 
         outcome_in_gms = temp_df.FTR.value_counts().reindex(order, fill_value=0).reset_index()
         for i in range(len(outcome_in_gms)):
-            outcome_dict[outcome_in_gms['FTR'][i]] = outcome_in_gms.['count'][i]  
+            outcome_dict[outcome_in_gms['FTR'][i]] = outcome_in_gms['count'][i]  
         
         # Format response String    
         record_vs_team = f"W{outcome_dict.get('W', '0')} D{outcome_dict.get('D', '0')} L{outcome_dict.get('L', '0')}"
