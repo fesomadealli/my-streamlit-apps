@@ -2540,13 +2540,13 @@ def display_plot(plot_type, plot_alt=None, args=None):
         title, content = add_expander(exp_title="For Context", exp_md=games_played_md, val=True)
     
     if plot_type == "Head-to-Head":
-        try:
-            if plot_alt == "Result Percentages":
+        if plot_alt == "Result Percentages":
+             try:
                 figure = Results_Pct(select_opponent=args.get("select_opponent"),
                                      select_period=args.get("select_period"),
                                      select_range=args.get("select_range"))
-        except UnboundLocalError:
-            pass #do nothing
+            except UnboundLocalError:
+                pass #do nothing
         elif plot_alt == "Form Guide":
             figure = Form_Guide(select_opponent=args.get('select_opponent'),
                                 select_period=args.get('select_period'),
