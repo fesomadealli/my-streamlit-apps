@@ -2422,8 +2422,8 @@ h2h_form_guide_md = ("""
 
 gls_plot_md = ("""
                 ##### KINDLY NOTE
-               When comparing teams H2H with the OAU MFT, the range of games 
-               selected is of null effect chiefly because of the few matches played on 
+               When comparing teams H2H with the OAU MFT, filtering the range of games for 
+               Home Matches is of null effect, chiefly because of the few matches played on 
                Homeground in many of the tournaments attended consequently leading 
                to a sparse distribution of teams faced. Basically, there's not 
                enough data to aggregate.
