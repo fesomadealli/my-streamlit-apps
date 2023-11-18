@@ -1660,7 +1660,7 @@ def get_All_time_record(select_opponent):
         outcome_dict[outcomes_vs_team['FTR'][i]] = outcomes_vs_team['count'][i]  
     
     # Format response String    
-    record_vs_team = f"W{outcome_dict['W']} D{outcome_dict['D']} L{outcome_dict['L']}"
+    record_vs_team = f"W{outcome_dict.get('W', "0")} D{outcome_dict.get('D', "0")} L{outcome_dict.get('L', "0")}"
     # Add item to dictionary
     record_dict.update({'Match Outcomes' : record_vs_team})
     
