@@ -2541,7 +2541,7 @@ def display_plot(plot_type, plot_alt=None, args=None):
     
     if plot_type == "Head-to-Head":
         if plot_alt == "Result Percentages":
-             try:
+            try:
                 figure = Results_Pct(select_opponent=args.get("select_opponent"),
                                      select_period=args.get("select_period"),
                                      select_range=args.get("select_range"))
