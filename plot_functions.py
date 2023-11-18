@@ -2575,8 +2575,7 @@ def display_plot(plot_type, plot_alt=None, args=None):
             except UnboundLocalError:
                 pass #do nothing
             except ValueError:
-                figure =  ("No match for this selection!") 
-                # pass #do nothing
+                figure = ("No match for this selection!") 
 
     if plot_type == "Competitions":
         if plot_alt == "Result Aggregate":
@@ -2593,23 +2592,29 @@ def display_plot(plot_type, plot_alt=None, args=None):
             # title, content = add_expander(exp_title="For Clarity", exp_md=h2h_form_guide_md, 
             #                               val=True)
         elif plot_alt == "Goals Ratio":
-            figure = Goals_Plot(select_period=args.get("select_period"),
-                                select_category=args.get('select_category'),
-                                select_opponent=args.get("select_opponent"),
-                                select_outcome=args.get('select_outcome'),
-                                select_comp=args.get('select_comp'), 
-                                select_edition=args.get('select_edition'))
-            # with st.expander("How the Goals Averages Plot Works for Head-to-Head?"):
-            #     st.markdown(gls_plot_md)
-            # title, content = add_expander(exp_title="Caution", exp_md=gls_plot_caution_md,
-            #                                 val=True)
-            
+            try:
+                figure = Goals_Plot(select_period=args.get("select_period"),
+                                    select_category=args.get('select_category'),
+                                    select_opponent=args.get("select_opponent"),
+                                    select_outcome=args.get('select_outcome'),
+                                    select_comp=args.get('select_comp'), 
+                                    select_edition=args.get('select_edition'))
+                # with st.expander("How the Goals Averages Plot Works for Head-to-Head?"):
+                #     st.markdown(gls_plot_md)
+                # title, content = add_expander(exp_title="Caution", exp_md=gls_plot_caution_md,
+                #                                 val=True)
+            except UnboundLocalError:
+                pass #do nothing
         elif plot_alt == "Common Scorelines":
-            figure = Common_Scoreline(select_opponent=args.get("select_opponent"),
-                                      select_period=args.get("select_period"),
-                                      select_range=args.get("select_range"),
-                                      select_comp=args.get('select_comp'))
-
+            try:
+                figure = Common_Scoreline(select_opponent=args.get("select_opponent"),
+                                          select_period=args.get("select_period"),
+                                          select_range=args.get("select_range"),
+                                          select_comp=args.get('select_comp'))
+            except UnboundLocalError:
+                pass #do nothing
+            except ValueError:
+                figure = ("No match for this selection!") 
     nl(1)
     btn_descr = "Confirm Selection and Apply Filters (if any)"
     if st.button("Apply Selection", help=btn_descr):
