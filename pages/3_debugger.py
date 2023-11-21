@@ -1,78 +1,119 @@
-# # Import streamlit 
-# import streamlit as st
-# import pandas as pd
-# import matplotlib.pyplot as plt
-# import numpy as np
-# import seaborn as sns
-# from matplotlib.patches import Arc, Rectangle, Circle
+import streamlit as st
+import random
+import time
+import quiz
 
-# # Universal Plot Elements
-# # Text Detail
-# team = 'OAU MFT'
-# team_alias = 'OAU Giants'
-# coach = 'Chike Egbunnu-Olimene'
-# data_span = '2003-2022'
-# author = 'Data by @allinewsnigeria' #'@fesomadealli'
-# add_note = "(Walkover & Abandoned ties are excluded)"
+# newline char
+def nl(num_of_lines):
+    for i in range(num_of_lines):
+        st.write(" ")
 
-# # Font
-# b_font =  'Merriweather'
-# t_font = 'Fira Code'
-# b_fsize = 14
-# t_fsize = 16
+#  Add lines
+def add_line(val=False):
+    if val == True:
+        st.markdown('''
+        ---
+                    ''')
 
-# # Colors for Dark Mode
-# facecolor = '#242526' #18191A is an alternative choice
-# ax_color = '#3A3B3C'  
-# plot_color = '#E0CB8A'
-# off_white = '#FAF9F6'
-# alt_color = '#303233'
+# Page Title
+st.header("**QUIZ**")
+st.markdown(f"""
+        *How conversant are you with OAU Sports ?
+        What do you know about the history of sports on OAU campus ?*
+        *How current and up-to-date are you? Test your knowledge with ten (10) randomly generated questions!*
+        \n*At the end of the quiz, you can see how you rank on the leaderboard.*
+        """)
 
-# # Text Customization & Fancy Legend Library
-# import matplotlib.patheffects as path_effects
-# import highlight_text
-# h_axs = highlight_text.ax_text 
-# h_fig = highlight_text.fig_text
 
-# # # Customizing plot order (for results) from the start
-# # order = ['W', 'D', 'L']
+# placeholders
+# scorecard_placeholder = st.empty()
+# def add_placeholders():
+number_placeholder = st.empty()
+question_placeholder = st.empty()
+options_placeholder = st.empty()
+results_placeholder = st.empty()
 
-# # Figure Paddings         
-# pad_top = "\n\n"
-# pad_end = "\n\n"
-# hspace  = " "
-# vspace  = " "
-# newline = '\n'
+# Select Question
+list_of_questions = quiz.load_questions()
 
-# # Loading Results Dataset
-# def load_data():
-#     # Results df
-#     results = pd.read_csv('assets/results_df.csv')
-#     #  Drop 'Unnamed:0' column
-#     results = results.drop(columns=['Unnamed: 0'])
-#     # Home Games df
-#     home_games = pd.read_csv("assets/h_games.csv")
-#     # Goals df
-#     goals = pd.read_csv("assets/goals_df.csv")
-    
-#     return results, home_games, goals
+# Initialize variables to keep track of the current question and user's score
+user_answers = [] 
+options_archive = []
+user_score = 0        
 
-# results_df, h_games, goals_df = load_data()
+scorecard_placeholder = st.empty()
+add_line(True)
+nl(2)
 
-# import plot_functions
+# Function to display a question
+def display_questions(questions=True, answers=False):
+    for i in range(len(list_of_questions)):
+        current_question = i+1
+        with st.container():
+            number_placeholder = st.empty()
+            question_placeholder = st.empty()
+            options_placeholder = st.empty()
+            results_placeholder = st.empty()
+            expander_area = st.empty()
 
-# select_opponent = "All_teams"
-# select_period = "FTR"
-# select_range = "All_Games"
-# select_comp=None
-# select_edition=None 
-# select_category = None
-# # select_comp = None
+            # print
+            number_placeholder.write(f"*Question {current_question}*")
+            question_placeholder.write(f"**{list_of_questions[i].get('question')}**")
+            # list of options
+            options = list_of_questions[i].get("options")
+            # track the selected option
+            selected_option = options_placeholder.radio("",options=options)
+            user_selection = options.index(selected_option)
+            options_archive.append(user_selection)
 
-# # select_edition = None
-# select_outcome = None
+            # comparing answers to track score
+            if selected_option == list_of_questions[i].get("correct_answer"):
+                user_answers.append(True)
+            else:
+                user_answers.append(False)
 
-# # ------------------------------------------------------ #
-# select_period = period = "HTR"
+            if answers == True:
+                # Results Feedback
+                if user_answers[i] == True:
+                    results_placeholder.success("CORRECT")
+                else:
+                    results_placeholder.error("INCORRECT")
 
-# # goals_df
+                # Explanation of the Answer
+                expander_area.write(f"*{list_of_questions[i].get('explanation')}*")
+           
+            nl(1)
+
+    #  calculate score
+    global user_score
+    if answers == True:
+        user_score += user_answers.count(True)            
+        scorecard_placeholder.write(f"### **Your Final Score : {user_score}**")
+
+        refresh = st.button("Refresh Quiz")
+        if refresh:
+            quiz.main(True)
+
+
+# Check if the counter is not in session_state, initialize it to 0
+if 'counter' not in st.session_state:
+    st.session_state.counter = 0
+
+# Main Streamlit app
+def main():
+    # Button to start/stop loading questions
+    if st.button("START / STOP QUIZ"):
+        with st.spinner("*this may take a while*"):
+            time.sleep(2)
+        # Toggle between True and False on each button click
+        st.session_state.counter += 1
+        if st.session_state.counter % 2 == 0:
+            button_state = True
+        else:
+            button_state = False
+        # checking button state
+        st.write(f"Button State is {button_state}")
+        display_questions(answers=button_state)
+
+if __name__ == "__main__":
+    main()
