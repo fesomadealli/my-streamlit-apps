@@ -272,18 +272,15 @@ sport_questions = [
 import random
 import streamlit as st
 
-
 @st.cache()
-def load_questions(list_of_questions):
-    # list_of_questions = random.sample(sport_questions, 10)
+def load_questions():
+    list_of_questions = random.sample(sport_questions, 10)
     return list_of_questions
-
 
 # Main Streamlit app
 def main(refresh=False):
-    # refresh_button = st.button("Refresh Questions")
-    # Use a dummy variable (refresh_button) to force cache refresh
-    # list_of_questions = load_questions(refresh_button)
     if refresh:
-        new_questions = random.sample(sport_questions, 10)
-        load_questions(new_questions)
+        load_questions.clear_cache()
+        new_questions = load_questions()
+    else:
+        st.write("E no dey work")
