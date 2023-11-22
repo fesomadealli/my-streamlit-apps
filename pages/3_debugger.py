@@ -112,7 +112,7 @@ def main():
         else:
             button_state = False
         # checking button state
-        st.write(f"Button State is {button_state}")
+        nl(2)
         display_questions(answers=button_state)
 
 if __name__ == "__main__":
