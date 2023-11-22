@@ -92,7 +92,7 @@ def display_questions(questions=True, answers=False):
 
         refresh = st.button("Refresh Quiz")
         if refresh:
-            quiz.main(True)
+            quiz.main(refresh=True)
 
 
 # Check if the counter is not in session_state, initialize it to 0
