@@ -276,11 +276,3 @@ import streamlit as st
 def load_questions():
     list_of_questions = random.sample(sport_questions, 10)
     return list_of_questions
-
-# Main Streamlit app
-def main(refresh=False):
-    if refresh:
-        load_questions.clear_cache()
-        new_questions = load_questions()
-    else:
-        st.write("E no dey work")
