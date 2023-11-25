@@ -231,6 +231,7 @@ def featured_article(val=False):
                 "First, is about the retired veteran, Chike Egbunu-Olimene (CEO) "
                 "and the other on the last appointed captain by the Coach (Toheebah).")
         # add_line(True)
+        import Main
 
         nl(1)
         with st.expander(label="READ THE BIOGRAPHY OF CHIKE EGBUNU-OLIMENE (CEO)", 
