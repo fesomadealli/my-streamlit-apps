@@ -136,7 +136,7 @@ with st.expander(label="Connect With Me",
         redirect_button(medium_url,medium_btn)
 
     with col_5:
-    redirect_button(github_url,github_btn)
+        redirect_button(github_url,github_btn)
 
 # Support
 with st.expander(label="Support My Work", 
