@@ -248,8 +248,7 @@ def featured_article(val=False):
             nl(1)
             biography_article = "Celebrating the Remarkable Journey of Coach Chike: A Legacy in Sports and Education"
             biography_url = "https://medium.com/#"
-            if st.button(biography_article):
-                webbrowser.open(biography_url)
+            redirect_button(biography_url, biography_article)
             nl(1)
 
         with st.expander(label="READ TOHEEBAH'S JOURNEY AS AN OAU ATHLETE", 
@@ -275,8 +274,7 @@ def featured_article(val=False):
             nl(1)
             giantess_article = "Video Analytics In Nigerian Collegiate Sports: A Peek Into The Future of Women's Football"
             giantess_url = "https://medium.com/#"
-            if st.button(giantess_article):
-                webbrowser.open(biography_url)
+            redirect_button(giantess_url, giantess_article)
             nl(1)
 
 def send_feedback(val=False):
