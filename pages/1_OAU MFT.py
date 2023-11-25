@@ -263,7 +263,7 @@ def featured_article(val=False):
             nl(1)
             borderline_article = "Overcoming The Borderline Syndrome : Toheebah's Inspiring Journey"
             borderline_url = "https://medium.com/@fesomade.alli/c04792872e46"
-            Main.redirect_button(borderline_url, borderline_article)
+            Main.redirect_button(borderline_article, borderline_url)
             nl(1)
 
         with st.expander(label="WILL ANALYTICS THRIVE IN COLLEGIATE (WOMEN) FOOTBALL ?", 
