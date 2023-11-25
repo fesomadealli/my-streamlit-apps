@@ -71,7 +71,7 @@ nl(2)
 # EXPANDER SECTION 
 # Quick Guide
 with st.expander(label="Quick Guide", 
-                 expanded=False):
+                 expanded=True):
     exp_text = ("To select an App, access the sidebar by clicking on the icon "
                 "on the top left of your screen. This shows you the list of available "
                 "Apps and the Main page which you are currently on. "
@@ -149,8 +149,7 @@ with st.expander(label="Support My Work",
     
     st.write(exp_text)
     
-    if st.button(donate_btn):
-        st.write("Button 1 Clicked!")
+    redirect_button("https://wa.me/+2348175879358","SUPPORT MY WORK")
 
 # sidebar contact
 st.sidebar.markdown('''
