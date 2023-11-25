@@ -28,6 +28,25 @@ def add_line(val=False):
         ---
                     ''')
 
+def redirect_button(url: str, text: str= None, color="#da111b"):
+    st.markdown(
+    f"""
+    <a href="{url}" target="_self">
+        <div style="
+            display: inline-block;
+            padding: 0.5em 1em;
+            color: white;
+            background-color: {color};
+            border-radius: 3px;
+            text-decoration: none;">
+            {text}
+        </div>
+    </a>
+    """,
+    unsafe_allow_html=True 
+    )
+    
+
 # urls 
 twitter_url = "twitter.com/fesomadealli" 
 medium_url = "medium.com/fesomade.alli"
@@ -105,24 +124,19 @@ with st.expander(label="Connect With Me",
     github_btn = "Github"
 
     with col_1:
-        if st.button(email_btn):
-            webbrowser.open(email_url)
+        redirect_button(email_url,email_btn)
 
     with col_2:
-        if st.button(twitter_btn):
-            webbrowser.open(twitter_url)
+        redirect_button(twitter_url,twitter_btn)
 
     with col_3:
-        if st.button(linkedin_btn):
-            webbrowser.open(linkedin_url)
+        redirect_button(linkedin_url,linkedin_btn)
 
     with col_4:
-        if st.button(medium_btn):
-            webbrowser.open(medium_url)
+        redirect_button(medium_url,medium_btn)
 
     with col_5:
-        if st.button(github_btn):
-            webbrowser.open(github_url)
+    redirect_button(github_url,github_btn)
 
 # Support
 with st.expander(label="Support My Work", 
