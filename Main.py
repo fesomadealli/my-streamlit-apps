@@ -98,12 +98,11 @@ with st.expander(label="About Me",
 
     # Add buttons to the columns
     with col1:
-        if st.button(button_label1):
-            st.write("Button 1 Clicked!")
+         redirect_button("https:fesomadealli.streamlit.app", button_label1)
 
     with col2:
-        if st.button(button_label2):
-            st.write("Button 2 Clicked!")
+         redirect_button("https:medium.com/fesomadealli", button_label2)
+    nl(1)
 
 # Connect With Me
 with st.expander(label="Connect With Me", 
@@ -136,8 +135,7 @@ with st.expander(label="Connect With Me",
         redirect_button(medium_url,medium_btn)
 
     with col_5:
-        redirect_button(github_url,github_btn)
-        
+        redirect_button(github_url,github_btn) 
     nl(1)
 
 # Support
@@ -149,7 +147,8 @@ with st.expander(label="Support My Work",
     
     st.write(exp_text)
     
-    redirect_button("https://wa.me/+2348175879358","SUPPORT MY WORK")
+    redirect_button("https:/fesomadealli.streamlit.app","SUPPORT MY WORK")
+    nl(1)
 
 # sidebar contact
 st.sidebar.markdown('''
