@@ -48,11 +48,11 @@ def redirect_button(url: str, text: str= None, color="#da111b"):
     
 
 # urls 
-twitter_url = "twitter.com/fesomadealli" 
-medium_url = "medium.com/fesomade.alli"
-linkedin_url = "linkedin.com/in/fesomade-alli-680808155"
+twitter_url = "https://www.twitter.com/fesomadealli" 
+medium_url = "https://www.medium.com/fesomade.alli"
+linkedin_url = "https://www.linkedin.com/in/fesomade-alli-680808155"
 email_url = "mailto:fesomadealli@gmail.com"
-github_url = "github.com/fesomadealli"
+github_url = "https://www.github.com/fesomadealli"
 
 # Your Streamlit app code starts here
 st.title("Welcome Page")
