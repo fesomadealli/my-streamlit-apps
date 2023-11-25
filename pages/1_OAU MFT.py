@@ -4,7 +4,6 @@ import pandas as pd
 import glob
 # import plost
 import time
-import webbrowser
 import io
 import os
 
@@ -262,9 +261,8 @@ def featured_article(val=False):
             
             nl(1)
             borderline_article = "Overcoming The Borderline Syndrome : Toheebah's Inspiring Journey"
-            borderline_url = "https://medium.com/#"
-            if st.button(borderline_article):
-                webbrowser.open(borderline_url)
+            borderline_url = "https://medium.com/@fesomade.alli/c04792872e46"
+            redirect_button(borderline_url, borderline_article)
             nl(1)
 
         with st.expander(label="WILL ANALYTICS THRIVE IN COLLEGIATE (WOMEN) FOOTBALL ?", 
