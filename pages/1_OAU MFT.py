@@ -309,129 +309,128 @@ def test_your_knowledge(val=False):
         set_landing_page()
         import quiz
         nl(1)
-
         st.markdown(f"""
         *How conversant are you with OAU Sports ?
         What do you know about the history of sports on OAU campus ?*
         *How current and up-to-date are you? Test your knowledge with ten (10) randomly generated questions!*
         \n*At the end of the quiz, you can see how you rank on the leaderboard.*
-        
+
         Instructions:
         1. The questions load with all answers default to Option A, kindly
-           select your answers by changing clicking on the radio button or 
-           leaving it at the default (if applicable)
+        select your answers by changing clicking on the radio button or 
+        leaving it at the default (if applicable)
             
         2. The question pool contain 1000+ questions on OAU Sports cutting
-           across Football (majorly), other sports and general questions.
-        
+        across Football (majorly), other sports and general questions.
+
         3. All Questions do not carry equal points:
-           General Questions(5pts)     Women Sports(3pts)   
-           Football Questions(2.5pts)  Other Sports(2.5pts)
+        General Questions(5pts)     Women Sports(3pts)   
+        Football Questions(2.5pts)  Other Sports(2.5pts)
             
         4. To upload your score to the leaderboard, you need to create an account.     
-        
+
         """)
-      
+
         scorecard_placeholder = st.empty()
         add_line(True)
         nl(2)
-
+        # Acrivate Session States
+        ss = st.session_state
         # Initializing Session States
-        if 'counter' not in st.session_state:
-            st.session_state['counter'] = 0
-        if 'start' not in st.session_state:
-            st.session_state['start'] = False
-        if 'stop' not in st.session_state:
-            st.session_state['stop'] = False
-        if 'refresh' not in st.session_state:
-            st.session_state['refresh'] = False
-        if "button_label" not in st.session_state:
-            st.session_state['button_label'] = "START"
-        if 'current_quiz' not in st.session_state:
-            st.session_state['current_quiz'] = {}
-        if 'user_answers' not in st.session_state:
-            st.session_state['user_answers'] = []
-        if 'grade' not in st.session_state:
-            st.session_state['grade'] = 0
+        if 'counter' not in ss:
+            ss['counter'] = 0
+        if 'start' not in ss:
+            ss['start'] = False
+        if 'stop' not in ss:
+            ss['stop'] = False
+        if 'refresh' not in ss:
+            ss['refresh'] = False
+        if "button_label" not in ss:
+            ss['button_label'] = ['START', 'SUBMIT', 'RELOAD']
+        if 'current_quiz' not in ss:
+            ss['current_quiz'] = {}
+        if 'user_answers' not in ss:
+            ss['user_answers'] = []
+        if 'grade' not in ss:
+            ss['grade'] = 0
+
+        # Function for button click
+        def btn_click():
+            ss.counter += 1
+            if ss.counter > 2: 
+                ss.counter = 0
+                ss.clear()
+            else:
+                update_session_state()
+                with st.spinner("*this may take a while*"):
+                    time.sleep(2)
 
         # Function to update current session
         def update_session_state():
-            if st.session_state.counter == 1:
-                st.session_state['start'] = True
-                st.session_state['button_label'] = "SUBMIT"
-                st.session_state.current_quiz = random.sample(quiz.sport_questions, 10)
-
-            elif st.session_state.counter == 2:
+            if ss.counter == 1:
+                ss['start'] = True
+                ss.current_quiz = random.sample(quiz.sport_questions, 10)
+            elif ss.counter == 2:
                 # Set start to False
-                st.session_state['start'] = True 
+                ss['start'] = True 
                 # Set stop to True
-                st.session_state['stop'] = True
-                # Rename button text
-                st.session_state['button_label'] = "RELOAD"
-
-            elif st.session_state.counter == 3:
+                ss['stop'] = True
+            elif ss.counter == 3:
                 # Deactivate start & stop by setting them to False
-                st.session_state['start'] = st.session_state['stop'] = False
+                ss['start'] = ss['stop'] = False
                 # Activate refresh to True
-                st.session_state['refresh'] = True
-                st.session_state.clear()
+                ss['refresh'] = True
+                ss.clear()
 
         # Function to display a question
         def quiz_app():
             # create container
             with st.container():
-                if (st.session_state.start):
-                    for i in range(len(st.session_state.current_quiz)):
+                if (ss.start):
+                    for i in range(len(ss.current_quiz)):
                         number_placeholder = st.empty()
                         question_placeholder = st.empty()
                         options_placeholder = st.empty()
                         results_placeholder = st.empty()
-                        expander_area = st.empty()
-                        
+                        expander_area = st.empty()                
                         # Add '1' to current_question tracking variable cause python starts counting from 0
                         current_question = i+1
                         # display question_number
                         number_placeholder.write(f"*Question {current_question}*")
                         # display question based on question_number
-                        question_placeholder.write(f"**{st.session_state.current_quiz[i].get('question')}**") 
+                        question_placeholder.write(f"**{ss.current_quiz[i].get('question')}**") 
                         # list of options
-                        options = st.session_state.current_quiz[i].get("options")
+                        options = ss.current_quiz[i].get("options")
                         # track the user selection
                         options_placeholder.radio("", options, index=1, key=f"Q{current_question}")
                         nl(1)
-
-                        if st.session_state.stop:
-                            # comparing answers to track score
-                            if st.session_state[f'Q{current_question}'] == st.session_state.current_quiz[i].get("correct_answer"):
-                                st.session_state.user_answers.append(True)
-                            
+                        # Grade Answers and Return Corrections
+                        if ss.stop:
+                            # Track length of user_answers
+                            if len(ss.user_answers) < 10: 
+                                # comparing answers to track score
+                                if ss[f'Q{current_question}'] == ss.current_quiz[i].get("correct_answer"):
+                                    ss.user_answers.append(True)
+                                else:
+                                    ss.user_answers.append(False)
                             else:
-                                st.session_state.user_answers.append(False)
-
+                                pass
                             # Results Feedback
-                            if st.session_state.user_answers[i] == True:
+                            if ss.user_answers[i] == True:
                                 results_placeholder.success("CORRECT")
                             else:
                                 results_placeholder.error("INCORRECT")
-
                             # Explanation of the Answer
-                            expander_area.write(f"*{st.session_state.current_quiz[i].get('explanation')}*")
+                            expander_area.write(f"*{ss.current_quiz[i].get('explanation')}*")
 
             # calculate score
-            if st.session_state.stop:  
-                st.session_state['grade'] = st.session_state.user_answers.count(True)           
-                scorecard_placeholder.write(f"### **Your Final Score : {st.session_state['grade']} / {len(st.session_state.current_quiz)}**")
-
+            if ss.stop:  
+                ss['grade'] = ss.user_answers.count(True)           
+                scorecard_placeholder.write(f"### **Your Final Score : {ss['grade']} / {len(ss.current_quiz)}**")
+                
         # Initializing Button Text
-        button = st.button(label=st.session_state['button_label'], key='button_press')
-
-        if button:
-            st.session_state.counter += 1
-            update_session_state()
-            with st.spinner("*this may take a while*"):
-                time.sleep(2)
-            st.experimental_rerun()
-
+        st.button(label=ss.button_label[ss.counter], 
+                key='button_press', on_click= btn_click)
         nl(3)
         # Run Main App
         quiz_app()
