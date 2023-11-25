@@ -28,7 +28,7 @@ def add_line(val=False):
         ---
                     ''')
 
-def redirect_button(url: str, text: str= None, color="#da111b"):
+def redirect_button(url: str, text: str= None, color="#8b0000"):
     st.markdown(
     f"""
     <a href="{url}" target="_self">
