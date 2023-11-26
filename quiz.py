@@ -75,7 +75,7 @@ sport_questions = [
 
         {
         "question_number": 10,
-        "question": "How many goals did the OAU MFT record in games won (in all competitions) when facing the University of Ibadan under Chike Egbunu-Olimene?",
+        "question": "How many goals did the OAU MFT score in games won (in all competitions) when facing the University of Ibadan under Chike Egbunu-Olimene?",
         "options": ["9", "15", "10", "None of the above"],
         "correct_answer": "None of the above",
         "explanation": ("The OAU MFT have a 6-0 aggregate score in games they won vs. UI (in all competitions) under Chike Egbunu-Olimene.")
