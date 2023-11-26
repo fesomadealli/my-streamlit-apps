@@ -2,241 +2,244 @@
 sport_questions = [
         {
         "question_number": 1, 
-        "question": "Who won the FIFA World Cup in 2018?", 
-        "options": ["France", "Croatia", "Brazil", "Germany"], 
-        "correct_answer": "France", 
-        "explanation": "France won the 2018 FIFA World Cup."
+        "question": "How many OAU football athletes have won MOTM Awards in HiFL fixtures played away from Home?",
+        "options": ["Three", "Four", "Five", "Six"],
+        "correct_answer": "Four",
+        "explanation": "Four OAU football athletes have won MOTM Awards in HiFL fixtures played away from Home: Oripelaye Kehinde, Afolabi Adekola, Adeyemi Opeyemi, and Olaniyi Muyiwa."
         },
 
         {
         "question_number": 2, 
-        "question": "Which country has the most Olympic gold medals in total?", 
-        "options": ["USA", "China", "Russia", "Germany"], 
-        "correct_answer": "USA", 
-        "explanation": "The USA has the most Olympic gold medals overall."
+        "question": "In which year did the OAU MFT concede 3 goals in a match against the University of Agriculture, Makurdi?",
+        "options": ["2017", "2018", "2019", "2020"],
+        "correct_answer": "2018",
+        "explanation": "OAU MFT conceded 3 goals in a match in four different matches during CEO's time at the helm, and two of those were against the University of Agriculture, Makurdi. One such match was in HiFL2018 semifinals (first-leg) in Ile-Ife."
         },
 
         {
         "question_number": 3, 
-        "question": "Who holds the record for the most goals in a single NBA game?", 
-        "options": ["Michael Jordan", "LeBron James", "Kobe Bryant", "Wilt Chamberlain"], 
-        "correct_answer": "Wilt Chamberlain", 
-        "explanation": "Wilt Chamberlain scored 100 points in a single NBA game."
+        "question": "How many Finals did the OAU MFT lose (in regular time) in the period between 2003-2022?",
+        "options": ["0", "1", "2", "3"],
+        "correct_answer": "1",
+        "explanation": "The OAU MFT only lost 1 out of 5 Finals (in regular time) in the period between 2003-2022, and it was the NUGA 2007 Finals vs. UNIMAID in Maiduguri."
         },
 
         {
         "question_number": 4, 
-        "question": "Which tennis player has the most Grand Slam singles titles?", 
-        "options": ["Roger Federer", "Rafael Nadal", "Novak Djokovic", "Serena Williams"], 
-        "correct_answer": "Margaret Court", 
-        "explanation": "Margaret Court holds the record for the most Grand Slam singles titles."
+        "question": "How many times did Team UI score a goal in their two visits to the OAU MFT homeground between 2003-2022?",
+        "options": ["0", "1", "2", "3"],
+        "correct_answer": "0",
+        "explanation": "Team UI never scored a goal in any of their two visits to the OAU MFT homeground (in competitions) between 2003-2022."
         },
 
         {
         "question_number": 5, 
-        "question": "In what year did Usain Bolt set the world record for the 100m?", 
-        "options": ["2008", "2012", "2016", "2020"], 
-        "correct_answer": "2009", 
-        "explanation": "Usain Bolt set the 100m world record in 2009."
+        "question": "What are the records for most goals scored and conceded per match in all competitions (2003-2022)?",
+        "options": ["Most Goals Conceded: 2, Most Goals Scored: 4", "Most Goals Conceded: 3, Most Goals Scored: 6", "Most Goals Conceded: 4, Most Goals Scored: 8", "Most Goals Conceded: 5, Most Goals Scored: 7"],
+        "correct_answer": "Most Goals Conceded: 3, Most Goals Scored: 6",
+        "explanation": "The records for most goals scored and conceded per match in all competitions are: Most Goals Conceded in a match - 3, Most Goals Scored in a match - 6."
         },
 
         {
         "question_number": 6, 
-        "question": "Which country hosted the first modern Olympic Games?", 
-        "options": ["Greece", "France", "USA", "Germany"], 
-        "correct_answer": "Greece", 
-        "explanation": "Greece hosted the first modern Olympic Games in 1896."
+        "question": "What are the records for most goals scored and conceded per match on homeground (2003-2022)?",
+        "options": ["Most Goals Conceded: 2, Most Goals Scored: 5", "Most Goals Conceded: 3, Most Goals Scored: 6", "Most Goals Conceded: 4, Most Goals Scored: 8", "Most Goals Conceded: 5, Most Goals Scored: 7"],
+        "correct_answer": "Most Goals Conceded: 3, Most Goals Scored: 5",
+        "explanation": "The records for most goals scored and conceded per match on homeground are: Most Goals Conceded in a match - 3, Most Goals Scored in a match - 5."
         },
 
         {
         "question_number": 7, 
-        "question": "Who is the all-time leading scorer in the NHL?", 
-        "options": ["Wayne Gretzky", "Mario Lemieux", "Jaromir Jagr", "Alex Ovechkin"], 
-        "correct_answer": "Wayne Gretzky", 
-        "explanation": "Wayne Gretzky is the all-time leading scorer in the NHL."
+        "question": "These OAU MFT players have all scored against three or more different teams in the HiFL EXCEPT?",
+        "options": ["Olaniyi Muyiwa", "Muraina Toba", "Seyi Olumofe", "Esakpere Anthony"],
+        "correct_answer": "Esakpere Anthony",
+        "explanation": ("Esiakpere Anthony featured in two different HiFL squads for the OAU MFT but only recorded goals against "
+                        "two different teams compared to Muraina Toba(3), Olaniyi Muyiwa(4) and Seyi Olumofe(3).")
         },
 
         {
         "question_number": 8, 
-        "question": "Which team has won the most Super Bowls in NFL history?", 
-        "options": ["New England Patriots", "Pittsburgh Steelers", "San Francisco 49ers", "Dallas Cowboys"], 
-        "correct_answer": "Pittsburgh Steelers", 
-        "explanation": "The Pittsburgh Steelers have won the most Super Bowls."
+        "question": "What ended an unbeaten run of 10 games in all competitions and 7 games unbeaten in HiFL?",
+        "options": ["0—3 defeat to UAM at HiFL 2018", "1—2 defeat to EKSU at HiFL 2022", "0—1 defeat to LASU at HiFL 2019", "None of the above"],
+        "correct_answer": "1—2 defeat to EKSU at HiFL 2022",
+        "explanation": "The 1—2 defeat to EKSU at HiFL 2022 ended an unbeaten run of 10 games in all competitions and 7 games unbeaten in HiFL."
         },
 
         {
         "question_number": 9, 
-        "question": "Who is considered the 'Greatest of All Time' (GOAT) in boxing?", 
-        "options": ["Muhammad Ali", "Mike Tyson", "Floyd Mayweather", "Sugar Ray Robinson"], 
-        "correct_answer": "Muhammad Ali", 
-        "explanation": "Muhammad Ali is often regarded as the greatest boxer of all time."
+        "question": "How many times did OAU MFT only ever lose back-to-back games (2003-2022)?",
+        "options": ["Once", "Twice", "Thrice", "Never"],
+        "correct_answer": "Twice",
+        "explanation": "OAU MFT only ever lost back-to-back games twice in the course of 2003—2022."
         },
 
         {
         "question_number": 10,
-        "question": "Which golf course is famous for hosting The Masters tournament?", 
-        "options": ["Pebble Beach", "Augusta National", "St. Andrews", "Pinehurst"], 
-        "correct_answer": "Augusta National", 
-        "explanation": "Augusta National hosts The Masters tournament."
+        "question": "How many goals did the OAU MFT record in games won (in all competitions) when facing the University of Ibadan under Chike Egbunu-Olimene?",
+        "options": ["9", "15", "10", "None of the above"],
+        "correct_answer": "None of the above",
+        "explanation": ("The OAU MFT have a 6-0 aggregate score in games they won vs. UI (in all competitions) under Chike Egbunu-Olimene.")
         },
 
         {
         "question_number": 11, 
-        "question": "Who won the FIFA World Cup in 2006?", 
-        "options": ["Italy", "Brazil", "France", "Germany"],
-        "correct_answer": "Italy", 
-        "explanation": "Italy won the 2006 FIFA World Cup."
+        "question": "Which one of these OAU Sport Council stakeholders has served in the capacity of the OAUSC Chairperson?",
+        "options": ["Dr. Akinbiola", "Abu Adamu Lasisi", "Mrs. W.A Tijani", "Prof. Y.B Amusa"],
+        "correct_answer": "Prof. Y.B Amusa",
+        "explanation": "Prof. Y.B Amusa currently serves as the OAUSC Chairperson."
         },
 
         {
         "question_number": 12, 
-        "question": "Which country has won the most medals in Olympic gymnastics?", 
-        "options": ["USA", "China", "Russia", "Romania"], 
-        "correct_answer": "USA", 
-        "explanation": "The USA has won the most Olympic gymnastics medals."
+        "question": "In which edition of the NUGA Games did OAU MFT attend but didn't play in the Finals under Chike Egbunu-Olimene?",
+        "options": ["2007", "2011", "2015", "2019"],
+        "correct_answer": "2011",
+        "explanation": ("UNIBEN 2011 in Benin was the only edition of the NUGA Games the OAU MFT attended under "
+                       "CEO and didn't play in the Finals, "courtesy of an early exit in the group stage.")
         },
 
         {
         "question_number": 13, 
-        "question": "Who is the only player to have scored 100 points in an NBA game?", 
-        "options": ["LeBron James", "Kobe Bryant", "Michael Jordan", "Wilt Chamberlain"], 
-        "correct_answer": "Wilt Chamberlain", 
-        "explanation": "Wilt Chamberlain is the only player to score 100 points in an NBA game."
+        "question": "In how many games did Coach CEO avoid a defeat in the first half in his first 13 games in charge?",
+        "options": ["6", "9", "10", "13"],
+        "correct_answer": "13",
+        "explanation": "Coach CEO never lost the first half in his first 13 games in charge of the OAU MFT (at competitions)."
         },
 
         {
         "question_number": 14, 
-        "question": "Which female tennis player has won the most Grand Slam singles titles?", 
-        "options": ["Serena Williams", "Steffi Graf", "Martina Navratilova", "Margaret Court"], 
-        "correct_answer": "Margaret Court", 
-        "explanation": "Margaret Court holds the record for the most Grand Slam singles titles."
+        "question": "What are the longest unbeaten runs at competitions attended under Chike Egbunu-Olimene?",
+        "options": ["NUGA Games: 5, HiFL: 7, NUFOL Games: 3", "NUGA Games: 8, HiFL: 7, NUFOL Games: 5", "NUGA Games: 10, HiFL: 5, NUFOL Games: 7", "NUGA Games: 7, HiFL: 5, NUFOL Games: 3"],
+        "correct_answer": "NUGA Games: 8, HiFL: 7, NUFOL Games: 5",
+        "explanation": "Longest Unbeaten runs at competitions attended are: NUGA Games - 8, HiFL - 7, NUFOL Games - 5."
         },
 
         {
         "question_number": 15, 
-        "question": "In what year did the Chicago Bulls win their first NBA championship?", 
-        "options": ["1991", "1989", "1993", "1987"], 
-        "correct_answer": "1991", 
-        "explanation": "The Chicago Bulls won their first NBA championship in 1991."
+        "question": "What record did the OAU MFT set since trailing 0-2 in Makurdi at HT?",
+        "options": ["Most consecutive wins", "Most consecutive draws", "Most consecutive clean sheets", "Most consecutive losses"],
+        "correct_answer": "Most consecutive clean sheets",
+        "explanation": "Since trailing 0-2 in Makurdi at HT, the OAU MFT under CEO enjoyed an impressive run of 29 first halves without going behind! A record that more than doubled the one initially set by CEO (13) when he first took charge."
         },
 
         {
         "question_number": 16, 
-        "question": "Who is the current Formula 1 World Champion?", 
-        "options": ["Lewis Hamilton", "Max Verstappen", "Sebastian Vettel", "Valtteri Bottas"], 
-        "correct_answer": "Max Verstappen", 
-        "explanation": "Max Verstappen is the current Formula 1 World Champion."
+        "question": "In which match did OAU MFT only ever lost both halves in a game?",
+        "options": ["UI in 2018", "UNIMAID in 2007", "UAM in 2019", "UNICAL in 2021"],
+        "correct_answer": "UAM in 2018",
+        "explanation": "OAU MFT under CEO only ever lost both halves in a game once, and it was in a 3-0 defeat (Away) to the University of Agriculture, Makurdi in 2018: 0-2 (L) in the First half, 0-1 (L) in the Second half."
         },
 
         {
         "question_number": 17,
-        "question": "Which country has won the most Rugby World Cups?", 
-        "options": ["New Zealand", "South Africa", "Australia", "England"], 
-        "correct_answer": "New Zealand", 
-        "explanation": "New Zealand has won the most Rugby World Cups."
+        "question": "What are OAU MFT Longest Unbeaten Runs Per Half (all comps)?",
+        "options": ["First-half: 25 Games, Second Half: 14 Games", "First-half: 29 Games, Second Half: 18 Games", "First-half: 20 Games, Second Half: 10 Games", "First-half: 24 Games, Second Half: 12 Games"],
+        "correct_answer": "First-half: 29 Games, Second Half: 14 Games",
+        "explanation": "OAU MFT Longest Unbeaten Runs Per Half (all comps) are: First-half: 29 Games, Second Half: 14 Games."
         },
 
         {
         "question_number": 18, 
-        "question": "Who holds the record for the most points scored in a single NBA game?",
-        "options": ["Kobe Bryant", "LeBron James", "Wilt Chamberlain", "Michael Jordan"], 
-        "correct_answer": "Wilt Chamberlain", 
-        "explanation": "Wilt Chamberlain scored 100 points in a single NBA game."
+        "question": "What happened in the 2-0 win over LASU at the mainbowl in 2019?",
+        "options": ["OAU MFT won the NUGA Games", "Seyi Olumofe scored a hat-trick", "OAU MFT equalled their longest unbeaten run", "OAU MFT lost the match"],
+        "correct_answer": "OAU MFT equalled their longest unbeaten run",
+        "explanation": "OAU MFT equalled their longest unbeaten run (10 Games) under CEO in the 2-0 win over LASU at the mainbowl in 2019. Goals from Adeyemi Opeyemi and Olaniyi Muyiwa earned the team the deserved win."
         },
 
         {
         "question_number": 19, 
-        "question": "Which country has the most Olympic gold medals in swimming?", 
-        "options": ["USA", "Australia", "China", "Russia"],
-        "correct_answer": "USA",
-        "explanation": "The USA has the most Olympic gold medals in swimming."
+        "question": "Who is the visiting goalkeeper with the most Save Percentage in an HiFL match against OAU MFT on homeground?",
+        "options": ["Seyi Olumofe", "Adeyemi Opeyemi", "Saka Abiola", "Olaniyi Muyiwa"],
+        "correct_answer": "Saka Abiola",
+        "explanation": "Following his heroics in 2019, Saka Abiola (LASU) is the visiting goalkeeper with the most Save Percentage (77.77%) in an HiFL match played against the OAU MFT on homeground."
         },
 
         {
         "question_number": 20, 
-        "question": "Who won the FIFA World Cup in 1998?", 
-        "options": ["Brazil", "Italy", "France", "Germany"], 
-        "correct_answer": "France", 
-        "explanation": "France won the 1998 FIFA World Cup."
+        "question": "What is the record regarding the OAU MFT never losing the second half of a fixture played on homeground under CEO?",
+        "options": ["True", "False", "Partially True", "Not Specified"],
+        "correct_answer": "True",
+        "explanation": "The OAU MFT never lost the second half of a fixture played on homeground under CEO."
         },
 
         {
         "question_number": 21, 
-        "question": "Which athlete has the most Olympic gold medals?", 
-        "options": ["Usain Bolt", "Michael Phelps", "Carl Lewis", "Simone Biles"], 
-        "correct_answer": "Michael Phelps", 
-        "explanation": "Michael Phelps holds the record for the most Olympic gold medals by an athlete."
+        "question": "What did OAU MFT achieve despite enjoying Super 4 privileges in HiFL2019?",
+        "options": ["Conceded the fewest goals", "Outscored every other SW geo-pol region university", "Won the NUGA Games", "Lost all group stage matches"],
+        "correct_answer": "Outscored every other SW geo-pol region university",
+        "explanation": "Despite enjoying Super 4 privileges and participating only in the KO stages of the HiFL2019, the OAU MFT under CEO outscored (8 Goals) every other University from the SW geo-pol region who started the tournament from the group stages."
         },
 
         {
         "question_number": 22, 
-        "question": "In what year did the NHL expand to include the Vegas Golden Knights?", 
-        "options": ["2015", "2017", "2019", "2021"], 
-        "correct_answer": "2017", 
-        "explanation": "The Vegas Golden Knights joined the NHL in the 2017-2018 season."
+        "question": "How many changes did CEO make to his starting lineups at the HiFL2019 across the seven games played in that competition?",
+        "options": ["5", "8", "10", "15"],
+        "correct_answer": "10",
+        "explanation": "In HiFL2019, CEO made a total of 10 changes to his starting lineups across the seven games played in that competition, and the OAU MFT featured a total of 15 different players in their starting-XI."
         },
 
         {
         "question_number": 23,
-        "question": "Who is the all-time leading scorer in the Premier League?", 
-        "options": ["Alan Shearer", "Wayne Rooney", "Thierry Henry", "Andy Cole"],
-        "correct_answer": "Alan Shearer", 
-        "explanation": "Alan Shearer is the all-time leading scorer in the Premier League."
+        "question": "What is the overall goal difference at competitions for the OAU MFT under CEO?",
+        "options": ["+14", "+18", "+20", "+24"],
+        "correct_answer": "+18",
+        "explanation": "The overall goal difference at competitions for the OAU MFT under CEO is +18."
         },
 
         {
         "question_number": 24, 
-        "question": "Which country has won the most Copa America titles?",
-        "options": ["Argentina", "Brazil", "Uruguay", "Chile"],
-        "correct_answer": "Uruguay", 
-        "explanation": "Uruguay has won the most Copa America titles."
+        "question": "Who is the only player to have scored in three different competitions under CEO?",
+        "options": ["Adeyemi Opeyemi", "Seyi Olumofe", "Olaniyi Muyiwa", "Wale Akanfe"],
+        "correct_answer": "Adeyemi Opeyemi",
+        "explanation": "Adeyemi Opeyemi is the only player to have scored in three different competitions under CEO: NUGA, HiFL, and NUFOL Games."
         },
 
         {
         "question_number": 25,
-        "question": "Who won the Ballon d'Or in 2021?",
-        "options": ["Lionel Messi", "Cristiano Ronaldo", "Robert Lewandowski", "Mohamed Salah"], 
-        "correct_answer": "Lionel Messi", 
-        "explanation": "Lionel Messi won the Ballon d'Or in 2021."
+        "question": "In which year did OAU MFT score the most goals in competitions under CEO?",
+        "options": ["2018", "2019", "2020", "2021"],
+        "correct_answer": "2018",
+        "explanation": "OAU MFT scored the most goals in competitions under CEO in the year 2018."
         },
 
         {
         "question_number": 26, 
-        "question": "Which country has won the most Ryder Cup titles?", 
-        "options": ["USA", "Europe", "Great Britain", "Australia"], 
-        "correct_answer": "USA",
-        "explanation": "The USA has won the most Ryder Cup titles."
+        "question": "Which team did OAU MFT defeat in the semi-finals to reach the finals in the NUFOL Games?",
+        "options": ["UNILORIN", "UNILAG", "UNIBEN", "UDUSOK"],
+        "correct_answer": "UDUSOK",
+        "explanation": "OAU MFT defeated UDUSOK in the semi-finals to reach the finals in the NUFOL Games."
         },
 
         {
         "question_number": 27,
-        "question": "Who is the All-time leading scorer in the NBA?", 
-        "options": ["LeBron James", "Kareem Abdul-Jabbar", "Kobe Bryant", "Karl Malone"], 
-        "correct_answer": "LeBron James", 
-        "explanation": "LeBron James is the All-time leading scorer in the NBA."
+        "question": "How many times did OAU MFT win the NUGA Gold medal under CEO?",
+        "options": ["Once", "Twice", "Thrice", "Four times"],
+        "correct_answer": "Once",
+        "explanation": "OAU MFT won the NUGA Gold medal once under CEO, and it happened in 2014."
         },
 
         {
         "question_number": 28, 
-        "question": "In what year did the FIFA Women's World Cup start?",
-        "options": ["1991", "1995", "2000", "2003"], "correct_answer": "1991", 
-        "explanation": "The FIFA Women's World Cup started in 1991."
+        "question": "What was the score of the 2019 Peace Cup semi-final between OAU MFT and E-Springs FC?",
+        "options": ["1-0", "2-0", "0-1", "0-2"],
+        "correct_answer": "2-0",
+        "explanation": "The score of the 2019 Peace Cup semi-final between OAU MFT and E-Springs FC was 2-0 in favor of OAU MFT."
         },
 
         {
         "question_number": 29, 
-        "question": "Which country has won the most Davis Cup titles in tennis?", 
-        "options": ["USA", "Spain", "Australia", "France"], 
-        "correct_answer": "USA", 
-        "explanation": "The USA has won the most Davis Cup titles."
+        "question": "What are Seyi Olumofe's popular aliases?",
+        "options": ["Drizzy, The Animal", "Cresspoh, The Animal", "Safehands, Bobo", "Otuah, Toheebah"],
+        "correct_answer": "Drizzy, The Animal",
+        "explanation": "Seyi Olumofe's popular aliases are Drizzy and The Animal."
         },
 
         {
         "question_number": 30, 
-        "question": "Who is the all-time leading scorer in MLB?",
-        "options": ["Barry Bonds", "Hank Aaron", "Babe Ruth", "Alex Rodriguez"],
-        "correct_answer": "Barry Bonds", 
-        "explanation": "Barry Bonds is the all-time leading scorer in Major League Baseball (MLB)."
+        "question": "Which player was the top scorer for the OAU MFT in the 2019 HiFL season?",
+        "options": ["Seyi Olumofe", "Tella-Imam Abdulmalik", "Adeyemi Opeyemi", "Olaniyi Muyiwa"],
+        "correct_answer": "Tella-Imam Abdulmalik",
+        "explanation": "Tella-Imam Abdulmalik was the top scorer for the OAU MFT in the 2019 HiFL season."
         },
 
         {
@@ -267,12 +270,3 @@ sport_questions = [
                         "\nOluwanooni(2022/23) and Sumbade Jnr(2023/24)")
         }
 ]
-
-# Import statements
-import random
-import streamlit as st
-
-@st.cache()
-def load_questions():
-    list_of_questions = random.sample(sport_questions, 10)
-    return list_of_questions
