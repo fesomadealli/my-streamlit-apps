@@ -314,7 +314,7 @@ def test_your_knowledge(val=False):
         *How conversant are you with OAU Sports ?
         What do you know about the history of sports on OAU campus ?*
         *How current and up-to-date are you? Test your knowledge with ten (10) randomly generated questions!*
-        \n*At the end of the quiz, you may see how you rank on the leaderboard.*
+        \n*In a later update, the point scheme and at the end of the quiz, you may see how you rank on the leaderboard.*
 
         Instructions:
         1. The questions load with all answers default to Option B, kindly
@@ -328,14 +328,11 @@ def test_your_knowledge(val=False):
         General Questions(5pts)     Women Sports(3pts)   
         Football Questions(2.5pts)  Other Sports(2.5pts)
             
-        4. The quiz is not time-bound and switching pages should not interrupt your exercise.
-
-        5. In a later update, the point scheme and the leaderboard would be activated.    
+        4. The quiz is not time-bound.    
 
         """)
 
         scorecard_placeholder = st.empty()
-        add_line(True)
         nl(2)
         # Acrivate Session States
         ss = st.session_state
