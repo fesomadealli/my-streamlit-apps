@@ -326,4 +326,94 @@ sport_questions = [
         "correct_answer": "Addah Obubo",
         "explanation": "Unlike all who are listed above, Addah Obubo was a renowned midfield maestro during his time with the OAU MFT."
         },
+
+        {
+        "question_number": 41,
+        "question": "The jersey #8 is synonymous to which OAU MFT athlete?",
+        "options": ["Addah Obubo", "Seyi Olumofe", "Tella-Imam Abdulmalik", "Ebire Abiodun"],
+        "correct_answer": "Seyi Olumofe",
+        "explanation": "Seyi Olumofe was fond of the #8 jersey during his time with the OAU MFT."
+        },
+
+        {
+        "question_number": 42,
+        "question": "How many wins did the OAU MFT record at the NUGA Games under CEO at FT (excl. walkovers)?",
+        "options": ["8", "7", "4", "6"],
+        "correct_answer": "8",
+        "explanation": "The OAU MFT under CEO won 8/19 games at the NUGA Games in all editions attended."
+        },
+
+        {
+        "question_number": 43,
+        "question": "How many FT clean sheets did the OAU MFT record at the NUGA Games in all editions attended under CEO?",
+        "options": ["8", "7", "4", "6"],
+        "correct_answer": "7",
+        "explanation": "The OAU MFT under CEO recorded 7/19 clean sheets at the NUGA Games in all editions attended under CEO."
+        },
+
+        {
+        "question_number": 44,
+        "question": "In how games did the OAU MFT record a 1-1 draw at FT at the NUGA Games in all editions attended under CEO?",
+        "options": ["1", "4", "3", "2"],
+        "correct_answer": "2",
+        "explanation": "The OAU MFT under CEO played a 1-1 draw at the NUGA Games only twice."
+        },
+
+        {
+        "question_number": 45,
+        "question": "At the UNIBEN 2011 NUGA Games, the OAU MFT were eliminated in the group stages but still scored more goals than they allowed, what were their goal averages at FT?",
+        "options": ["GF Avg: 2.33, GA Avg: 1.67", "GF Avg: 1.63, GA Avg: 1.07", "GF Avg: 1.83, GA Avg: 0.77", "GF Avg: 1.93, GA Avg: 0.98"],
+        "correct_answer": "GF Avg: 2.33, GA Avg: 1.67",
+        "explanation": "The OAU MFT at the UNIBEN 2011 NUGA Games scored 7 times in three games and allowed 5 goals leading to their elimination at the group stages. Their FT goal averages were therefore GF Avg: 2.33 and GA Avg: 1.67"
+        },
+
+        {
+        "question_number": 46,
+        "question": "Based on second half results of games played at the 2006 NUGA Games in Maiduguri, what was the aggregate score throughout the tournament?",
+        "options": ["5-4", "1-0", "0-1", "0-0"],
+        "correct_answer": "0-0",
+        "explanation": ("The OAU MFT played five games at the 2006 NUGA Games in Maiduguri, totalling three goalless draws, a 1-0 win and a 0-1 loss at FT. "
+                        "In all these instances, no goals were scored or conceded in the second half.")
+        },
+
+        {
+        "question_number": 47,
+        "question": "Based on second half results of games played at the 2006 NUGA Games in Maiduguri, what was the aggregate score throughout the tournament?",
+        "options": ["5-4", "1-0", "0-1", "0-0"],
+        "correct_answer": "0-0",
+        "explanation": ("The OAU MFT played five games at the 2006 NUGA Games in Maiduguri, totalling three goalless draws, a 1-0 win and a 0-1 loss at FT. "
+                        "In all these instances, no goals were scored or conceded in the second half.")
+        },
+
+        {
+        "question_number": 48,
+        "question": "How many losses did the OAU MFT record in penalty shoot-outs in 2019?",
+        "options": ["5", "0", "2", "3"],
+        "correct_answer": "3",
+        "explanation": ("The OAU MFT played three penalty shoot-outs (in all comps) in 2019 but failed to win any.")
+        },
+
+        {
+        "question_number": 49,
+        "question": "How many honors did the OAU MFT win on penalty shoot-outs under CEO?",
+        "options": ["5", "0", "2", "3"],
+        "correct_answer": "0",
+        "explanation": ("The OAU MFT won 0/2 penalty shoot-outs in Finals and 0/1 in Third-Place matches under CEO (in all comps).")
+        },
+
+        {
+        "question_number": 50,
+        "question": "Against whom did the then OAU MFT captain, Toheebah, miss the decisive penalty in the Final of the NUGA Games in 2022?",
+        "options": ["UNILAG", "ABU", "UI", "UNILORIN"],
+        "correct_answer": "UNILORIN",
+        "explanation": ("The OAU MFT contested honors in the Final of the 2022 NUGA Games in Lagos against the University of Ilorin.")
+        },
+
+        {
+        "question_number": 51,
+        "question": "How many honors did the OAU MFT win under Chike Egbunu-Olimene (in all comps)?",
+        "options": ["8", "3", "5", "6"],
+        "correct_answer": "6",
+        "explanation": ("The OAU MFT won 6/8 contested honors under CEO.")
+        },
 ]
