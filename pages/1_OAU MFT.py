@@ -284,7 +284,7 @@ def send_feedback(val=False):
                         <input type="text" name="name" placeholder= "Your Name " required>
                         <input type="email" name="email" placeholder= "Your Email Address" required>
                         <textarea name="message" placeholder="Your Message Here.."></textarea>
-                        <button type="submit">Send</button>
+                        <button type="submit">Send Feedback</button>
                     </form>
                     """
     if val==True:
