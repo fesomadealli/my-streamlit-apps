@@ -314,10 +314,9 @@ def test_your_knowledge(val=False):
         *How conversant are you with OAU Sports ?
         What do you know about the history of sports on OAU campus ?*
         *How current and up-to-date are you? Test your knowledge with ten (10) randomly generated questions!*
-        \n*At the end of the quiz, you can see how you rank on the leaderboard.*
 
         Instructions:
-        1. The questions load with all answers default to Option A, kindly
+        1. The questions load with all answers default to Option B, kindly
         select your answers by changing clicking on the radio button or 
         leaving it at the default (if applicable)
             
@@ -328,7 +327,9 @@ def test_your_knowledge(val=False):
         General Questions(5pts)     Women Sports(3pts)   
         Football Questions(2.5pts)  Other Sports(2.5pts)
             
-        4. To upload your score to the leaderboard, you need to create an account.     
+        4. The quiz is not time-bound and switching pages should not interrupt your exercise.
+
+        5. In a later update, the point scheme and the leaderboard would be activated.
 
         """)
 
