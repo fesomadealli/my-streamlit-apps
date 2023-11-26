@@ -95,7 +95,7 @@ sport_questions = [
         "options": ["2007", "2011", "2015", "2019"],
         "correct_answer": "2011",
         "explanation": ("UNIBEN 2011 in Benin was the only edition of the NUGA Games the OAU MFT attended under "
-                       "CEO and didn't play in the Finals, "courtesy of an early exit in the group stage.")
+                       "CEO and didn't play in the Finals courtesy of an early exit in the group stage.")
         },
 
         {
@@ -180,34 +180,35 @@ sport_questions = [
 
         {
         "question_number": 23,
-        "question": "What is the overall goal difference at competitions for the OAU MFT under CEO?",
-        "options": ["+14", "+18", "+20", "+24"],
-        "correct_answer": "+18",
-        "explanation": "The overall goal difference at competitions for the OAU MFT under CEO is +18."
+        "question": "What is the overall goal difference at competitions for the OAU MFT under CEO (excl. walkovers)?",
+        "options": ["+47", "+18", "+56", "+24"],
+        "correct_answer": "+47",
+        "explanation": ("In all competitions under CEO, the team managed 96 goals and allowed 49 in total (excl. walkovers). "
+                        "The overall goal difference at competitions for the OAU MFT under CEO is therefore +47."
         },
 
         {
         "question_number": 24, 
-        "question": "Who is the only player to have scored in three different competitions under CEO?",
-        "options": ["Adeyemi Opeyemi", "Seyi Olumofe", "Olaniyi Muyiwa", "Wale Akanfe"],
-        "correct_answer": "Adeyemi Opeyemi",
-        "explanation": "Adeyemi Opeyemi is the only player to have scored in three different competitions under CEO: NUGA, HiFL, and NUFOL Games."
+        "question": "How many wins did the OAU MFT record at the 2016 PreNUGA tournament in Kwara?",
+        "options": ["2", "0", "3", "1"],
+        "correct_answer": "0",
+        "explanation": "The team did not record a win at the 2016 PreNUGA tournament in Kwara."
         },
 
         {
         "question_number": 25,
-        "question": "In which year did OAU MFT score the most goals in competitions under CEO?",
-        "options": ["2018", "2019", "2020", "2021"],
-        "correct_answer": "2018",
-        "explanation": "OAU MFT scored the most goals in competitions under CEO in the year 2018."
+        "question": "How many goals did the OAU MFT score at HiFL2019?",
+        "options": ["15", "12", "9", "8"],
+        "correct_answer": "8",
+        "explanation": "OAU MFT scored eight (8) goals in the Higher Institutions' Football League in the year 2019."
         },
 
         {
         "question_number": 26, 
-        "question": "Which team did OAU MFT defeat in the semi-finals to reach the finals in the NUFOL Games?",
-        "options": ["UNILORIN", "UNILAG", "UNIBEN", "UDUSOK"],
-        "correct_answer": "UDUSOK",
-        "explanation": "OAU MFT defeated UDUSOK in the semi-finals to reach the finals in the NUFOL Games."
+        "question": "Which of these teams did OAU MFT defeat to claim the Gold at the NUFOL Games?",
+        "options": ["OOU", "UNILORIN", "UNIBEN", "UDUSOK"],
+        "correct_answer": "OOU",
+        "explanation": "OAU MFT defeated OOU 2-1 to claim the Gold medals at the 4th edition of the NUFOL Games, the final was recorded to have been played at Igbinedion University, Okada town"
         },
 
         {
@@ -228,18 +229,18 @@ sport_questions = [
 
         {
         "question_number": 29, 
-        "question": "What are Seyi Olumofe's popular aliases?",
-        "options": ["Drizzy, The Animal", "Cresspoh, The Animal", "Safehands, Bobo", "Otuah, Toheebah"],
-        "correct_answer": "Drizzy, The Animal",
+        "question": "'Drizzy, The Animal' were popular monickers for which of these OAU MFT players?",
+        "options": ["Seyi Olumofe", "Adeyemi Opeyemi", "Akanfe Oyewale", "Adegoke Toheeb"],
+        "correct_answer": "Seyi Olumofe",
         "explanation": "Seyi Olumofe's popular aliases are Drizzy and The Animal."
         },
 
         {
         "question_number": 30, 
-        "question": "Which player was the top scorer for the OAU MFT in the 2019 HiFL season?",
-        "options": ["Seyi Olumofe", "Tella-Imam Abdulmalik", "Adeyemi Opeyemi", "Olaniyi Muyiwa"],
-        "correct_answer": "Tella-Imam Abdulmalik",
-        "explanation": "Tella-Imam Abdulmalik was the top scorer for the OAU MFT in the 2019 HiFL season."
+        "question": "Who captained the OAU MFT to their only NUGA Gold medal under Chike Egbunu-Olimene?",
+        "options": ["Seyi Olumofe", "Yengibiri Henry", "Addah Obubo", "Ayotunde Faleti"],
+        "correct_answer": "Ayotunde Faleti",
+        "explanation": "Ayotunde Faleti captained the OAU MFT to their only NUGA Gold medal under Chike Egbunu-Olimene in 2014."
         },
 
         {
@@ -268,5 +269,21 @@ sport_questions = [
         "explanation": ("Out of the above named persons, only Sido Maguire has never been elected "
                         "\nthe Great Ife Students' Union Director of Sports unlike OluwaMicheal(2017/18), "
                         "\nOluwanooni(2022/23) and Sumbade Jnr(2023/24)")
-        }
+        },
+
+        {
+        "question_number": 34,
+        "question": "Which of these institutions is not one of the Top 5 teams faced by the OAU MFT under CEO?",
+        "options": ["UNILORIN", "AAUA", "UAM", "ABU"],
+        "correct_answer": "ABU",
+        "explanation": "The OAU MFT under CEO only had three meetings with ABU in all competitions, compared to AAUA(4), UAM(4) and UNILORIN(5)."
+        },
+
+        {
+        "question_number": 35,
+        "question": "Which of these correctly describes the percentage distribution of full-time results of the OAU MFT under CEO (in all comps)?",
+        "options": ["W(17.91%), D(38.81%), L(43.28%)", "W(50.75%), D(29.85%), L(19.40%)", "W(38.81%), D(52.24%), L(8.96%)", "Not Determinable"],
+        "correct_answer": "W(50.75%), D(29.85%), L(19.40%)",
+        "explanation": "The OAU MFT under CEO recorded 34/67 wins, 20/67 draws and 13 loses at FT (in all comps)."
+        },
 ]
