@@ -116,10 +116,10 @@ sport_questions = [
 
         {
         "question_number": 15, 
-        "question": "What record did the OAU MFT set since trailing 0-2 in Makurdi at HT?",
-        "options": ["Most consecutive wins", "Most consecutive draws", "Most consecutive clean sheets", "Most consecutive losses"],
+        "question": "What is the record for the unbeatun run of the OAU MFT at HT under CEO?",
+        "options": ["9", "43", "29", "13"],
         "correct_answer": "Most consecutive clean sheets",
-        "explanation": "Since trailing 0-2 in Makurdi at HT, the OAU MFT under CEO enjoyed an impressive run of 29 first halves without going behind! A record that more than doubled the one initially set by CEO (13) when he first took charge."
+        "explanation": "Since trailing 0-2 in Makurdi at HT (in 2018), the OAU MFT under CEO have enjoyed an impressive run of 29 first halves (in all comps) without going behind! A record that more than doubled the one initially set by CEO (13) when he first took charge."
         },
 
         {
@@ -267,8 +267,8 @@ sport_questions = [
         "options": ["OluwaMicheal", "Oluwanooni", "Sido Maguire", "Sumbade Jnr"],
         "correct_answer": "Sido Maguire",
         "explanation": ("Out of the above named persons, only Sido Maguire has never been elected "
-                        "\nthe Great Ife Students' Union Director of Sports unlike OluwaMicheal(2017/18), "
-                        "\nOluwanooni(2022/23) and Sumbade Jnr(2023/24)")
+                        "\nthe Great Ife Students' Union Director of Sports unlike OluwaMicheal (2017/18), "
+                        "\nOluwanooni (2022/23) and Sumbade Jnr (2023/24)")
         },
 
         {
@@ -285,5 +285,45 @@ sport_questions = [
         "options": ["W(17.91%), D(38.81%), L(43.28%)", "W(50.75%), D(29.85%), L(19.40%)", "W(38.81%), D(52.24%), L(8.96%)", "Not Determinable"],
         "correct_answer": "W(50.75%), D(29.85%), L(19.40%)",
         "explanation": "The OAU MFT under CEO recorded 34/67 wins, 20/67 draws and 13 loses at FT (in all comps)."
+        },
+
+        {
+        "question_number": 36,
+        "question": "Which of these did not captain the OAU MFT under Chike?",
+        "options": ["Kesh", "Adegoke Toheeb", "Seyi Olumofe", "Ayotunde Faleti"],
+        "correct_answer": "Kesh",
+        "explanation": "Kesh was the captain of the OAU FFT."
+        },
+
+        {
+        "question_number": 37,
+        "question": "Which of these is not in the Organization values of the OAUSC?",
+        "options": ["None of the below", "Excellence", "Integrity", "Innovation"],
+        "correct_answer": "None of the below",
+        "explanation": "The OAUSC organizational values as listed on the University's sports website are as follows: Innovation, Integrity, Excellence and Efficiency."
+        },
+
+        {
+        "question_number": 38,
+        "question": "Obafemi Awolowo University did not host the NUGA Games in which of these years?",
+        "options": ["1970", "1984", "2014", "None of the above"],
+        "correct_answer": "None of the above)",
+        "explanation": "Obafemi Awolowo University hosted the NUGA Games in 1970, 1984 and 2014, finishing 1st, 3rd and 3rd respectively on the final medals table."
+        },
+
+        {
+        "question_number": 39,
+        "question": "Which one these OAU MFT players has won honors at the NUGA Games, the HiFL and the Peace Cup?",
+        "options": ["Addah Obubo", "Friday Ogboeba", "Akanfe Oyewale", "Akinsola Alarape"],
+        "correct_answer": "Akanfe Oyewale",
+        "explanation": "Akanfe Oyewale has won honors with the OAU MFT under CEO at the above listed competitions."
+        },
+
+        {
+        "question_number": 40,
+        "question": "One of these OAU MFT players is not famous for playing as a goalkeeper, who is it?",
+        "options": ["Addah Obubo", "Chike Egbunu-Olimene", "Akanfe Oyewale", "Ebire Abiodun"],
+        "correct_answer": "Addah Obubo",
+        "explanation": "Unlike all who are listed above, Addah Obubo was a renowned midfield maestro during his time with the OAU MFT."
         },
 ]
