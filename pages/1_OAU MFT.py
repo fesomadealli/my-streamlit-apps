@@ -3,6 +3,7 @@ from streamlit_option_menu import option_menu
 import pandas as pd
 import glob
 # import plost
+import random
 import time
 import io
 import os
@@ -441,7 +442,6 @@ def view_leaderboard(val=False):
         global page
         page = "Quiz Leaderboard"
         set_landing_page()
-        import random
 
         # Sample data for ten users
         users = [
