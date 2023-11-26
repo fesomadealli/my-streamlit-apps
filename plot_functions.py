@@ -2481,13 +2481,16 @@ def display_plot(plot_type, plot_alt=None, args=None):
     if plot_type == "Match Results":
         corr = "results_corr"
         if plot_alt == "Result Percentages":
-            # This helps us know which of plot alternatives the user selected
-            # Since we already know the order of parameters the Resilt_Pct()
-            # takes, so we just read them from the params dictionary from the main App (args=dict(params))
-            # that called the plot function!
-            figure = Results_Pct(select_opponent=args.get("select_opponent"),
-                                 select_period=args.get("select_period"),
-                                 select_range=args.get("select_range"))
+            try:    
+                # This helps us know which of plot alternatives the user selected
+                # Since we already know the order of parameters the Resilt_Pct()
+                # takes, so we just read them from the params dictionary from the main App (args=dict(params))
+                # that called the plot function!
+                figure = Results_Pct(select_opponent=args.get("select_opponent"),
+                                     select_period=args.get("select_period"),
+                                     select_range=args.get("select_range"))
+            except UnboundLocalError:
+                pass
         elif plot_alt == "Result Correlation":
             figure = Corr_Heatmap(select_range=args.get("select_range"), corr_type=corr)
         elif plot_alt == "Runs":
