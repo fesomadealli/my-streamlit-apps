@@ -57,7 +57,7 @@
 **PENAG**	
 *AwayTeam Goals during Penalty Shootout*						
 **FORM**	
-*This is the interpretation of the match result with respect to OAU Giants (**Win**, **Draw** or **Loss**)*						
+*This is the interpretation of the match result, whether it was a **Win**, a **Draw** or a **Loss**, with respect to OAU MFT (also OAU Giants)*						
 **MatchRemarks**	
 *The dataset contains postponed matches, abandoned fixtures, inconclusive matches or anulled matches and this could occur for various reasons hence it is important to label completed and approved matches for ease.*													
 **Note**	
@@ -65,8 +65,8 @@
 **FormPen**	
 *This is the team result with respect to a penalty shootout whether a **Win** or a **Loss**.*						
 **GScorers(Info)**	
-*Provides information about the goalscorers.  Detailed collection of such info did not start until 2018.*						
+*Provides information about the goalscorers.  AlliNews Collection of such info did not start until 2018 and the detail on each entry differed based on available information. Some entries may include the name of the goalscorer and any combination of the period or time of the goal, the body part used in scoring the goal and the sequence of play through which the goal came.*						
 **MOTM**	
-*Indicates who was named Man of The Match in the fixture. Info is only (mostly) added when an OAU player is the recipient of such award given the xontext of the data collection process.*						
+*Indicates who was named Man of The Match in the fixture. Info is only (mostly) added when an OAU player is the recipient of such award given the context of the data collection process.*						
 **HalfLength**	
-*College fixtures are affected by certain inconsistencies particularly with timing hence we could indicate how long each match actually lasted.*																			
+*Collegiate football fixtures are affected by certain inconsistencies particularly with timing hence we could indicate how long each match actually lasted.*																			
