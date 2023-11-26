@@ -184,7 +184,7 @@ sport_questions = [
         "options": ["+47", "+18", "+56", "+24"],
         "correct_answer": "+47",
         "explanation": ("In all competitions under CEO, the team managed 96 goals and allowed 49 in total (excl. walkovers). "
-                        "The overall goal difference at competitions for the OAU MFT under CEO is therefore +47."
+                        "The overall goal difference at competitions for the OAU MFT under CEO is therefore +47.")
         },
 
         {
@@ -245,7 +245,7 @@ sport_questions = [
 
         {
         "question_number": 31,
-        "question": "Which is the odd one?",
+        "question": "All of these people have served as the SU Director of Sports in Obafemi Awolowo University EXCEPT ?",
         "options": ["OluwaMicheal", "Oluwanooni", "Sido Maguire", "Sumbade Jnr"],
         "correct_answer": "Sido Maguire",
         "explanation": ("Out of the above named persons, only Sido Maguire has never been elected "
