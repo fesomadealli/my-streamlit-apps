@@ -84,25 +84,26 @@ with st.expander(label="Quick Guide",
 # About Me
 with st.expander(label="About Me", 
                  expanded=False):
-    exp_text = ("Hardware | Sports | Leading Teams"
+    exp_text = ("Tech | Sports | Leading Teams"
                 "\n\nA Computer Engineer passionate about sports and technology and, "
                 "currently pursuing interests in sports engineering, administration and sport data analytics.")
     st.write(exp_text)
     
     # Define the labels for the buttons
-    button_label1 = "View Portfolio"
-    button_label2 = "Read Blogs"
+    portfolio_label = "View Portfolio"
+    blog_label = "Read Blogs"
 
     # Use Streamlit's columns to create a layout with columns
     col1, col2, col3, col4, col5 = st.columns(5)
 
     # Add buttons to the columns
-    with col1:
-         redirect_button("https:fesomadealli.streamlit.app", button_label1)
+    with col1:        
+        redirect_button("https://fesomadealli.streammlit.app", portfolio_label)
+        nl(1)
 
-    with col2:
-         redirect_button("https:medium.com/fesomadealli", button_label2)
-    nl(1)
+    with col2:        
+        redirect_button("https://fesomadealli.streammlit.app", blog_label)
+        nl(1)
 
 # Connect With Me
 with st.expander(label="Connect With Me", 
@@ -122,21 +123,21 @@ with st.expander(label="Connect With Me",
     medium_btn = "Medium"
     github_btn = "Github"
 
-    with col_1:
-        redirect_button(email_url,email_btn)
 
-    with col_2:
-        redirect_button(twitter_url,twitter_btn)
-
+    with col_1:        
+        redirect_button(email_url, email_btn)
+        nl(1)
+    with col_2:        
+        redirect_button(twitter_url, twitter_btn)
+        nl(1)
     with col_3:
         redirect_button(linkedin_url,linkedin_btn)
-
-    with col_4:
-        redirect_button(medium_url,medium_btn)
-
-    with col_5:
-        redirect_button(github_url,github_btn) 
-    nl(1)
+    with col_4:        
+        redirect_button(medium_url, medium_btn)
+        nl(1)
+    with col_5:        
+        redirect_button(github_url, github_btn)
+        nl(1)
 
 # Support
 with st.expander(label="Support My Work", 
@@ -147,8 +148,8 @@ with st.expander(label="Support My Work",
     
     st.write(exp_text)
     
-    redirect_button("https:/fesomadealli.streamlit.app","SUPPORT MY WORK")
-    nl(1)
+    if st.button(donate_btn):
+        st.write("Donation Platform would be updated soon")
 
 # sidebar contact
 st.sidebar.markdown('''
