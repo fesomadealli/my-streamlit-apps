@@ -191,15 +191,7 @@ def dataset(val=False):
                 f"{vspace*2}You may also share further actions performed on this "
                 "dataset with the brand via any of their social handles or their email address.")
         nl(2)
-
-        # download_btn = """
-        #         <!-- Add icon library -->
-        #         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        #         <!-- Auto width -->
-        #         <button class="btn"><i class="fa fa-download"></i> Download Files</button>
-        #         """
-        # st.markdown(download_btn, unsafe_allow_html=True)
-        # local_css("style.css")
+        
         dataset_url = "https://shorturl.at/cwMNW"
         Main.redirect_button(dataset_url, "DOWNLOAD FREE SPORTS DATA")
 
@@ -532,7 +524,7 @@ def credits(val=False):
             st.write("*Without belittling their support, I would like to appreciate everyone else who assisted in one way or another and every community who supported in one way or another. To mention a few, I appreciate the group of ex-players in the OAU MFT who granted me an audience during the data gathering and verification exercise, Van der Pee and everyone who assisted me with the quiz section, ACJ-OAU President, Faith Alofe, Toluano and Praise Allen for their assistance on the Featured Articles, everyone who assisted with the beta release and an extra **'thank you'** to those who gave their feedback after the first release. I appreciate Dr. Noni and members of the Oluwanöni sports cabinet, the entire Microlab team (Bro. Koya, Tunmise and everyone else not mentioned) for their support during programming and other technical things, all AI platforms consulted and everyone who donated a token or those who will do at a later time.* \n**Thank you all, sincerely!** 😊🙏🏾")
 
 # Analytics Section!
-def analytics(val=False): I
+def analytics(val=False): 
     if val==True:
         global page 
         page = "Analytics"
