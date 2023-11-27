@@ -28,5 +28,4 @@ def redirect_button(url: str, text: str= None, color="#da111b"):
     </a>
     """,
     unsafe_allow_html=True
-    )
-redirect_button("https://medium.com/@fesomade.alli/overcoming-the-borderline-syndrome-toheebahs-inspiring-journey-c04792872e46","THE BORDERLINE SYNDROME")
+    )
