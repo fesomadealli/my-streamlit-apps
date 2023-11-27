@@ -192,16 +192,16 @@ def dataset(val=False):
                 "dataset with the brand via any of their social handles or their email address.")
         nl(2)
 
-        download_btn = """
-                <!-- Add icon library -->
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                <!-- Auto width -->
-                <button class="btn"><i class="fa fa-download"></i> Download Files</button>
-                """
-        st.markdown(download_btn, unsafe_allow_html=True)
-        local_css("style.css")
-
-        # add_line(True)
+        # download_btn = """
+        #         <!-- Add icon library -->
+        #         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        #         <!-- Auto width -->
+        #         <button class="btn"><i class="fa fa-download"></i> Download Files</button>
+        #         """
+        # st.markdown(download_btn, unsafe_allow_html=True)
+        # local_css("style.css")
+        dataset_url = "https://shorturl.at/cwMNW"
+        Main.redirect_button(dataset_url, "DOWNLOAD FREE SPORTS DATA")
 
         nl(2)
         with st.expander(label="WHAT IS INCLUDED IN THE DOWNLOAD ?", 
