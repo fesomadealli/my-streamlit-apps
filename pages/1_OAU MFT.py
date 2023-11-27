@@ -501,7 +501,7 @@ def credits(val=False):
         with st.expander(label = 'AlliNewsNigeria',
                          expanded = False):
             nl(1)
-            st.write("*Special thanks to. @allinewsnigeria for the dataset*")
+            st.write("*Special thanks to @allinewsnigeria for the datasets and the records archived over the years*")
             nl(1)
         with st.expander(label = 'Chibuze',
                          expanded = False):
