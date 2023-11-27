@@ -509,36 +509,30 @@ def credits(val=False):
         with st.expander(label = 'AlliNewsNigeria',
                          expanded = False):
             nl(1)
-            st.write("*APPRECIATION FILE GOES HERE*")
+            st.write("*Special thanks to. @allinewsnigeria for the dataset*")
             nl(1)
         with st.expander(label = 'Chibuze',
                          expanded = False):
             nl(1)
-            st.write("*APPRECIATION FILE GOES HERE*")
+            st.write("Special thanks to Chibuze (Momodu Victor) for his assistance during data verification and review, and also for his continued support on other technical matters during the project.*")
             nl(1)
         with st.expander(label = 'Daniel Moneyy',
                          expanded = False):
             nl(1)
-            st.write("*APPRECIATION FILE GOES HERE*")
+            st.write("*Hakimiii!!! Special thanks to Daniel Ogunsola for his assistance on moving this project from a notebook file and onto Streamlit.*")
             nl(1)
         with st.expander(label = 'Chief Chike Egbunu-Olimene',
                          expanded = False):
             nl(1)
-            st.write("*APPRECIATION FILE GOES HERE*")
+            st.write("*Profound gratitude, first to God, and then to CEO for his impeccable record keeping and an unbelievable photographic memory without which this project might've been a dream.*")
             nl(1)
-        with st.expander(label = 'Coach Fasugba Toyin',
+        with st.expander(label = 'All other Collaborators',
                          expanded = False):
             nl(1)
-            st.write("*APPRECIATION FILE GOES HERE*")
-            nl(1)
-        with st.expander(label = 'Group of Coaches, Old Players etc.',
-                         expanded = False):
-            nl(1)
-            st.write("*APPRECIATION FILE GOES HERE*")
-            nl(1)
+            st.write("*Without belittling their support, I would like to appreciate everyone else who assisted in one way or another and every community who supported in one way or another. To mention a few, I appreciate the group of ex-players in the OAU MFT who granted me an audience during the data gathering and verification exercise, Van der Pee and everyone who assisted me with the quiz section, ACJ-OAU President, Faith Alofe, Toluano and Praise Allen for their assistance on the Featured Articles, everyone who assisted with the beta release and an extra **'thank you'** to those who gave their feedback after the first release. I appreciate Dr. Noni and members of the Oluwanöni sports cabinet, the entire Microlab team (Bro. Koya, Tunmise and everyone else not mentioned) for their support during programming and other technical things, all AI platforms consulted and everyone who donated a token or those who will do at a later time.* \n**Thank you all, sincerely!** 😊🙏🏾")
 
 # Analytics Section!
-def analytics(val=False):
+def analytics(val=False): I
     if val==True:
         global page 
         page = "Analytics"
