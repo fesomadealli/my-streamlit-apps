@@ -51,25 +51,30 @@ def display_endnote(page):
                         f"{vspace*2}[Listen to AlliNews Sports Podcasts](spotify.com/allinews-sports-podcast)")
             
             st.write(exp_text)
-
+                            
         with st.expander(label="Motive behind this Project?", 
                         expanded=False):
-            exp_text = ("Community Value... affects real audience... educate University community.. and more...")
+            exp_text = ("I wanted a prooject that has community value "
+                        "and affects a real audience. As a plus, it educates "
+                        "the University community and while I hope to foster a data conscious "
+                        "sports sector, I also understand that the University is 62 and that's a lot of sports history "
+                        "so I wanted to at least make sure anyone could catch up on the last 23!")
             st.write(exp_text)
 
         with st.expander(label="How was this data collected?", 
                         expanded=False):
-            exp_text = ("I snatch am for hold-up...")
+            exp_text = ("The data collection featured months of research, interviews")
             st.write(exp_text)
 
         with st.expander(label="How was this data wrangled?", 
                         expanded=False):
-            exp_text = ("With Omo and Dettol...")
+            exp_text = ("With Omo and Dettol...Just kidding!")
             st.write(exp_text)
 
         with st.expander(label="Is the data public?", 
                         expanded=False):
-            exp_text = ("Yes...")
+            exp_text = ("Yes, the data is publicly available and can be downloaded on the datasets "
+                        "page along with some other FREE data courtesy of AlliNews.")
             st.write(exp_text)
     else:
         nl(2)
