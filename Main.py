@@ -98,11 +98,11 @@ with st.expander(label="About Me",
 
     # Add buttons to the columns
     with col1:        
-        redirect_button("https://fesomadealli.streammlit.app", portfolio_label)
+        redirect_button("https://fesomadealli.streamlit.app", portfolio_label)
         nl(1)
 
     with col2:        
-        redirect_button("https://fesomadealli.streammlit.app", blog_label)
+        redirect_button("https://fesomadealli.streamlit.app", blog_label)
         nl(1)
 
 # Connect With Me
