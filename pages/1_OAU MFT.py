@@ -506,7 +506,7 @@ def credits(val=False):
         with st.expander(label = 'Chibuze',
                          expanded = False):
             nl(1)
-            st.write("Special thanks to Chibuze (Momodu Victor) for his assistance during data verification and review, and also for his continued support on other technical matters during the project.*")
+            st.write("*Special thanks to Chibuze (Momodu Victor) for his assistance during data verification and review, and also for his continued support on other technical matters during the project.*")
             nl(1)
         with st.expander(label = 'Daniel Moneyy',
                          expanded = False):
