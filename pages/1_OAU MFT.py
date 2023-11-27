@@ -245,7 +245,7 @@ def featured_article(val=False):
             
             nl(1)
             biography_article = "Celebrating the Remarkable Journey of Coach Chike: A Legacy in Sports and Education"
-            biography_url = "https://medium.com/#"
+            biography_url = "https://t.co/W3jy0RIoK5"
             redirect_button(biography_url, biography_article)
             nl(1)
 
