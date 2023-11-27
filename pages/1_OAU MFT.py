@@ -246,7 +246,7 @@ def featured_article(val=False):
             nl(1)
             biography_article = "Celebrating the Remarkable Journey of Coach Chike: A Legacy in Sports and Education"
             biography_url = "https://t.co/W3jy0RIoK5"
-            redirect_button(biography_url, biography_article)
+            Main.redirect_button(biography_url, biography_article)
             nl(1)
 
         with st.expander(label="READ TOHEEBAH'S JOURNEY AS AN OAU ATHLETE", 
@@ -263,17 +263,17 @@ def featured_article(val=False):
             Main.redirect_button(borderline_url, borderline_article)
             nl(1)
 
-        with st.expander(label="WILL ANALYTICS THRIVE IN COLLEGIATE (WOMEN) FOOTBALL ?", 
-                         expanded=False):
-            exp_text = (f"{vspace*2}Giantess Action Plots.")
-            nl(1)
-            st.write(exp_text)
+        # with st.expander(label="WILL ANALYTICS THRIVE IN COLLEGIATE (WOMEN) FOOTBALL ?", 
+        #                  expanded=False):
+        #     exp_text = (f"{vspace*2}Giantess Action Plots.")
+        #     nl(1)
+        #     st.write(exp_text)
             
-            nl(1)
-            giantess_article = "Video Analytics In Nigerian Collegiate Sports: A Peek Into The Future of Women's Football"
-            giantess_url = "https://medium.com/#"
-            redirect_button(giantess_url, giantess_article)
-            nl(1)
+        #     nl(1)
+        #     giantess_article = "Video Analytics In Nigerian Collegiate Sports: A Peek Into The Future of Women's Football"
+        #     giantess_url = "https://medium.com/#"
+        #     Main.redirect_button(giantess_url, giantess_article)
+        #     nl(1)
 
 def send_feedback(val=False):
     feedback_form ="""
