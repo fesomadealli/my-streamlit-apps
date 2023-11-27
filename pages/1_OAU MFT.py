@@ -234,7 +234,7 @@ def featured_article(val=False):
         nl(1)
         with st.expander(label="READ THE BIOGRAPHY OF CHIKE EGBUNU-OLIMENE (CEO)", 
                          expanded=False):
-            exp_text = (f"{vspace*2}Komolafe Tolulope Joshua ([Toluano](www.twitter.com/iamtoluano)) did a story on the biography "
+            exp_text = (f"{vspace*2}Komolafe Tolulope Joshua ([Toluano](https://www.twitter.com/iamtoluano)) did a story on the biography "
                         "of Coach Chike Egbunu-Olimene and zoomed in on his time at "
                         "Oba Awon Universities. His detail on the story was scattered "
                         "across his social networks, so, I have reworked the story and "
