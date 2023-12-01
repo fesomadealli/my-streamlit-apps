@@ -204,6 +204,7 @@ def dataset(val=False):
                         "enthusiasts may continue to update the records and perform further analysis.")
             nl(1)
             st.write(exp_text)
+            st.markdown("""Courtesy of AlliNews, Download FREE Collegiate Sports Data [Here](https://shorturl.at/cwMNW)""")
         nl(1)    
         with st.expander(label="READ METADATA", 
                          expanded=False):
